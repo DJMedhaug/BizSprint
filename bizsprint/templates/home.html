@@ -1,0 +1,457 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+
+
+
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+    <meta name="description" content="Biz Sprint">
+
+
+    <!-- Document Title
+    ============================================= -->
+	<title>Biz Sprint</title>
+<link rel="shortcut icon" href="images/roundicon.ico" type="image/x-icon" />
+</head>
+
+<body class="stretched">
+
+    <!-- Document Wrapper
+    ============================================= -->
+    <div id="wrapper" class="clearfix">
+
+        <!-- Header
+        ============================================= -->
+        <header id="header"  class="full-header dark" >
+
+            <div id="header-wrap">
+
+                <div class="container clearfix">
+
+                    <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+					<!-- Logo
+                    ============================================= -->
+                    <div id="logo">
+						<a href="index.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="images/logo.png" alt="Biz Sprint Logo"></a>
+						<a href="index.html" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img src="images/logo@2x.png" alt="Biz Sprint Logo"></a>
+					</div>
+					<!-- #logo end -->
+
+                   <!-- Primary Navigation
+                    ============================================= -->
+                    <nav id="primary-menu">
+
+                        <ul>
+                            <li class="current"><a href="index.html"><div>Home</div></a></li>
+                            <li><a href="about.html"><div>About</div></a></li>
+
+                            <li><a href="index-events.html"><div>Events</div></a>
+                            </li>
+                            <li class="mega-menu"><a href="gallery.html"><div>Gallery</div></a>
+
+                            </li>
+                             <li><a href="faqs.html"><div>FAQ</div></a>
+
+                            </li>
+                            <li class="mega-menu"><a href="contact-2-recaptcha.html"><div>Contact</div></a>
+                                <div class="mega-menu-content style-2 clearfix">
+									<ul class="mega-menu-column col-md-3">
+										<li>
+											<div class="widget visible-lg visible-md clearfix">
+
+												<h4>Our Location</h4>
+
+												<iframe src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJqcexvGsKlVQRS23cQFZaaOE&key=AIzaSyBK1tVedx2xkh0JEsWXS4o7YbQUEcvBCnY" width="600" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+											</div>
+										</li>
+									</ul>
+									<ul class="mega-menu-column col-md-6">
+										<li>
+											<div class="widget clearfix">
+
+												<h4>Send us a Quick Email</h4>
+
+												<div class="contact-widget" data-loader="button">
+													<div class="contact-form-result"></div>
+
+													<form class="nobottommargin" name="template-contactform" action="include/sendemail.php" method="post">
+
+														<div class="col_half">
+															<div class="col_full">
+																<input type="text" name="template-contactform-name" value="" class="form-control required" placeholder="Name" />
+															</div>
+															<div class="col_full">
+																<input type="email" name="template-contactform-email" value="" class="required email form-control" placeholder="Email" />
+															</div>
+															<div class="col_full nobottommargin">
+																<input type="text" name="template-contactform-phone" value="" class="form-control" placeholder="Phone" />
+															</div>
+														</div>
+
+														<div class="col_half col_last">
+															<div class="col_full">
+																<input type="text" name="template-contactform-subject" value="" class="required form-control" placeholder="Subject" />
+															</div>
+															<textarea class="required form-control" name="template-contactform-message" rows="4" cols="30" placeholder="Enter your Message"></textarea>
+														</div>
+
+														<div class="clear"></div>
+
+														<div class="col_full hidden">
+															<input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="form-control" />
+														</div>
+
+														<div class="col_full">
+															<button class="button button-3d button-small nomargin" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Send Message</button>
+														</div>
+
+													</form>
+												</div>
+
+											</div>
+										</li>
+									</ul>
+									<ul class="mega-menu-column col-md-3">
+										<li>
+											<div class="widget clearfix">
+
+												<h4>Our Headquarters</h4>
+
+												<address>
+													<strong>Address:</strong><br>
+													2626 SW Corbett Ave, Suite 100<br>
+													Portland, OR 97201<br>
+													<br>
+												</address>
+												<abbr title="Phone Number"><strong>Phone:</strong></abbr> 503-444-8836<br>
+
+												<abbr title="Email Address"><strong>Email:</strong></abbr> info@bizsprint.com
+
+												<div class="bottommargin-sm"></div>
+
+												<a href="#" class="social-icon si-small si-colored si-facebook" title="Facebook">
+													<i class="icon-facebook"></i>
+													<i class="icon-facebook"></i>
+												</a>
+												<a href="#" class="social-icon si-small si-colored si-twitter" title="Twitter">
+													<i class="icon-twitter"></i>
+													<i class="icon-twitter"></i>
+												</a>
+
+
+											</div>
+										</li>
+									</ul>
+								</div>
+                            </li>
+
+                        </ul>
+
+                    </nav><!-- #primary-menu end -->
+
+                </div>
+
+            </div>
+
+        </header><!-- #header end -->
+
+         <section id="slider" class="slider-parallax dark full-screen" style="background: url(images/landing/landing1.jpg) center;">
+
+			<div class="slider-parallax-inner">
+
+				<div class="container clearfix">
+
+					<div class="vertical-middle">
+
+						<div class="heading-block center nobottomborder">
+							<h1 data-animate="fadeInUp"><strong>Welcome To Biz Sprint</strong></h1>
+							<span data-animate="fadeInUp" data-delay="300">Explore upcoming events, sign up for events &amp; join the community.</span>
+						</div>
+
+						<!--<div class="accordion accordion-lg divcenter nobottommargin clearfix" style="max-width: 550px;">-->
+
+						<!--<div class="acctitle"><i class="acc-closed icon-lock3"></i><i class="acc-open icon-unlock"></i>Login to your Account</div>-->
+						<!--<div class="acc_content clearfix">-->
+							<!--<form id="login-form" name="login-form" class="nobottommargin" action="#" method="post">-->
+								<!--<div class="col_full">-->
+									<!--<label for="login-form-username">Username:</label>-->
+									<!--<input type="text" id="login-form-username" name="login-form-username" value="" class="form-control" />-->
+								<!--</div>-->
+
+								<!--<div class="col_full">-->
+									<!--<label for="login-form-password">Password:</label>-->
+									<!--<input type="password" id="login-form-password" name="login-form-password" value="" class="form-control" />-->
+								<!--</div>-->
+
+								<!--<div class="col_full nobottommargin">-->
+									<!--<button class="button button-3d button-black nomargin" id="login-form-submit" name="login-form-submit" value="login">Login</button>-->
+									<!--<a href="#" class="fright">Forgot Password?</a>-->
+								<!--</div>-->
+							<!--</form>-->
+						<!--</div>-->
+
+						<!--<div class="acctitle"><i class="acc-closed icon-user4"></i><i class="acc-open icon-ok-sign"></i>New Signup? Register for an Account</div>-->
+						<!--<div class="acc_content clearfix">-->
+							<!--<form id="register-form" name="register-form" class="nobottommargin" action="#" method="post">-->
+								<!--<div class="col_full">-->
+									<!--<label for="register-form-name">Name:</label>-->
+									<!--<input type="text" id="register-form-name" name="register-form-name" value="" class="form-control" />-->
+								<!--</div>-->
+
+								<!--<div class="col_full">-->
+									<!--<label for="register-form-email">Email Address:</label>-->
+									<!--<input type="text" id="register-form-email" name="register-form-email" value="" class="form-control" />-->
+								<!--</div>-->
+
+								<!--<div class="col_full">-->
+									<!--<label for="register-form-username">Choose a Username:</label>-->
+									<!--<input type="text" id="register-form-username" name="register-form-username" value="" class="form-control" />-->
+								<!--</div>-->
+
+								<!--<div class="col_full">-->
+									<!--<label for="register-form-phone">Phone:</label>-->
+									<!--<input type="text" id="register-form-phone" name="register-form-phone" value="" class="form-control" />-->
+								<!--</div>-->
+
+								<!--<div class="col_full">-->
+									<!--<label for="register-form-password">Choose Password:</label>-->
+									<!--<input type="password" id="register-form-password" name="register-form-password" value="" class="form-control" />-->
+								<!--</div>-->
+
+								<!--<div class="col_full">-->
+									<!--<label for="register-form-repassword">Re-enter Password:</label>-->
+									<!--<input type="password" id="register-form-repassword" name="register-form-repassword" value="" class="form-control" />-->
+								<!--</div>-->
+
+								<!--<div class="col_full nobottommargin">-->
+									<!--<button class="button button-3d button-black nomargin" id="register-form-submit" name="register-form-submit" value="register">Register Now</button>-->
+								<!--</div>-->
+							<!--</form>-->
+						<!--</div>-->
+
+					<!--</div>-->
+					</div>
+
+					<a href="#" data-scrollto="#section-features" class="one-page-arrow"><i class="icon-angle-down infinite animated fadeInDown"></i></a>
+
+				</div>
+
+			</div>
+
+		</section>
+
+
+        <!-- Content
+        ============================================= -->
+        <section id="content">
+
+          
+
+                </section>
+
+                <div class="section nobottommargin">
+                    <div class="container clearfix">
+
+                        <div class="heading-block-dark center">
+                            <h3>Receive <span>regular</span> Event Updates</h3>
+                        </div>
+
+                        <div id="widget-subscribe-form2-result" data-notify-type="success" data-notify-msg=""></div>
+                        <form id="widget-subscribe-form2" action="include/subscribe.php" role="form" method="post" class="nobottommargin">
+                            <div class="input-group input-group-lg divcenter" style="max-width:600px;">
+                                <span class="input-group-addon"><i class="icon-email2"></i></span>
+                                <input type="email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="submit">Subscribe Now</button>
+                                </span>
+                            </div>
+                        </form>
+
+                        <script>
+                            $("#widget-subscribe-form2").validate({
+                                submitHandler: function(form) {
+                                    $(form).find('.input-group-addon').find('.icon-email2').removeClass('icon-email2').addClass('icon-line-loader icon-spin');
+                                    $(form).ajaxSubmit({
+                                        target: '#widget-subscribe-form2-result',
+                                        success: function() {
+                                            $(form).find('.input-group-addon').find('.icon-line-loader').removeClass('icon-line-loader icon-spin').addClass('icon-email2');
+                                            $('#widget-subscribe-form2').find('.form-control').val('');
+                                            $('#widget-subscribe-form2-result').attr('data-notify-msg', $('#widget-subscribe-form2-result').html()).html('');
+                                            SEMICOLON.widget.notifications($('#widget-subscribe-form2-result'));
+                                        }
+                                    });
+                                }
+                            });
+                        </script>
+
+                    </div>
+                </div>
+
+                
+
+                <div class="container clearfix">
+
+                    <br>
+                    <h3>Upcoming Events</h3>
+
+                    <div id="posts" class="events small-thumbs">
+
+
+                        <div id="posts" class="events small-thumbs">
+
+                           <div class="entry clearfix"  data-animate="bounceInLeft">
+                            <div class="entry-image">
+                                    <img src="images/events/WIT.jpg" alt="Women in Tech">
+                            </div>
+                            <div class="entry-c">
+                                <div class="entry-title">
+                                    <h2>PDX Women in Tech (PDXWIT) Happy Hour Networking Event</h2>
+                                </div>
+                                <ul class="entry-meta clearfix">
+                                    <li><a href="events-calendar.html"><i class="icon-calendar3"></i>TUE, APR 19 AT 4:30 PM</a></li>
+                                    <li><a href="maps.html"><i class="icon-map-marker2"></i> PORTLAND, OR</a></li>
+                                </ul>
+                                <div class="entry-content">
+                                    <p>PDX Women in Tech exists to celebrate professional women in the Portland-metro area who work with, manage, lead or have an interest in technology. Whether you are developing event-driven, non-blocking applications in node.js or setting technology strategy for a Fortune 500 company - or anything in between - come join us!</p>
+                                    <a href="https://www.eventbrite.com/e/pdx-women-in-tech-pdxwit-happy-hour-networking-event-tickets-24048439530?utm-medium=discovery&utm-campaign=social&utm-content=attendeeshare&utm-source=cp&utm-term=listing" class="btn btn-default">Register</a>
+                                </div>
+                            </div>
+                        </div>
+
+                         <div class="entry clearfix"  data-animate="bounceInLeft">
+                            <div class="entry-image">
+                                    <img src="images/events/TechTalk.jpg" alt="Tech Talk">
+                            </div>
+                            <div class="entry-c">
+                                <div class="entry-title">
+                                    <h2>Tech Talks</h2>
+                                </div>
+                                <ul class="entry-meta clearfix">
+                                    <li><a href="events-calendar.html"><i class="icon-calendar3"></i> Friday, May 6, 2016 from 8:00 AM to 2:00 PM</a></li>
+                                    <li><a href="maps.html"><i class="icon-map-marker2"></i>  Oregon Tech - 27500 SW Parkway Ave, Wilsonville, OR 97070 </a></li>
+                                </ul>
+                                <div class="entry-content">
+                                    <p>TECH Talks is a one-day seminar produced entirely by students from Oregon Institute of Technology, featuring speakers who are shaping the future in the fields of Technology, Engineering, Creativity and Health. It brings exciting current innovations in the TECH fields to students; and presents cutting edge technologies, which help to connect them (the next generation of industry leaders) with prospective employers. The event also introduces to industry leaders, the opportunities Oregon Tech students have to develop their non-technical skills – such as writing, teamwork, and problem solving – which prepare them to be more well-rounded professionals.</p>
+                                    <a href="https://www.eventbrite.com/e/2016-tech-talks-registration-22515638882?utm-medium=discovery&utm-campaign=social&utm-content=attendeeshare&utm-source=cp&utm-term=listing" class="btn btn-default">Register</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                       <div class="center" data-animate="fadeInDown">
+
+                         <a href="index-events.html" data-scrollto="#section-pricing" class="button button-3d button-gray  nobottommargin">VIEW MORE UPCOMING</a>
+
+                        </div>
+
+<div class="divider divider-short divider-center"><i class="icon-crop"></i></div>
+
+
+                    
+
+                    <div class="clear"></div>
+<div class="fancy-title title-border title-center">
+						<h3>Sponsors</h3>
+					</div>
+
+					<div id="oc-clients-full" class="owl-carousel owl-carousel-full image-carousel bottommargin-sm carousel-widget" data-margin="30" data-loop="true" data-nav="false" data-autoplay="5000" data-pagi="false"data-items-xxs="2" data-items-xs="3" data-items-sm="4" data-items-md="5" data-items-lg="6">
+
+						<div class="oc-item"><a href="https://teamtreehouse.com/home" target="_blank"><img src="images/clients/treehouse.png" alt=""></a></div>
+						<div class="oc-item"><a href="https://www.urbanairship.com/" target="_blank"><img src="images/clients/urban-airship-logo.png" alt=""></a></div>
+						<div class="oc-item"><a href="http://www.learning.com/" target="_blank"><img src="images/clients/learningLogo.png" alt=""></a></div>
+						<div class="oc-item"><a href="http://www.elementaltechnologies.com/" target="_blank"><img src="images/clients/imgres.png" alt=""></a></div>
+						<div class="oc-item"><a href="http://www.nike.com/us/en_us/" target="_blank"><img src="images/clients/NIKE.png" alt=""></a></div>
+						<div class="oc-item"><a href="http://www.ibm.com/us-en/" target="_blank"><img src="images/clients/IBM.png" alt=""></a></div>
+						<div class="oc-item"><a href="https://healthplans.providence.org/individuals-families/" target="_blank"><img src="images/clients/phs_logo550px.png" alt="Clients"></a></div>
+						<div class="oc-item"><a href="http://bluejeans.com/" target="_blank"><img src="images/clients/bluejeans.png" alt=""></a></div>
+						<div class="oc-item"><a href="http://newrelic.com/" target="_blank"><img src="images/clients/NewRelic-logo-square.png" alt="Clients"></a></div>
+
+					</div>
+
+
+				</div>
+
+                    <script type="text/javascript">
+
+                        jQuery(document).ready(function($) {
+
+                            var ocClients = $("#oc-clients-full");
+
+                            ocClients.owlCarousel({
+                                margin: 30,
+                                loop: true,
+                                nav: false,
+                                autoplay: true,
+                                dots: false,
+                                autoplayHoverPause: true,
+                                responsive:{
+                                    0:{ items:2 },
+                                    480:{ items:3 },
+                                    768:{ items:4 },
+                                    992:{ items:5 },
+                                    1200:{ items:6 }
+                                }
+                            });
+
+                        });
+
+                    </script>
+
+                </div>
+
+
+
+            </div>
+
+        </section><!-- #content end -->
+
+   <!-- Footer
+        ============================================= -->
+        <footer id="footer" class="dark">
+
+            <!-- Copyrights
+            ============================================= -->
+            <div id="copyrights">
+
+                <div class="container clearfix">
+
+                    <div class="col_half">
+                        <img src="images/logo.png" alt="" class="footer-logo">
+
+                        Copyrights &copy; 2016 All Rights Reserved by Biz Sprint<br>
+
+
+                    </div>
+
+                    <div class="col_half col_last tright">
+                         <div class="copyrights-menu copyright-links fright clearfix">
+                            <a href="index.html">Home</a>/<a href="about.html">About</a>/<a href="events.html">Events</a>/<a href="gallery.html">Gallery</a>/<a href="faqs.html">FAQ</a>/<a href="contact.html">Contact</a>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </div><!-- #copyrights end -->
+
+        </footer><!-- #footer end -->
+
+    </div><!-- #wrapper end 'images/footer-bg.jpg'-->
+
+    <!-- Go To Top
+    ============================================= -->
+    <div id="gotoTop" class="icon-angle-up"></div>
+
+    <!-- Footer Scripts
+    ============================================= -->
+    <script type="text/javascript" src="js/functions.js"></script>
+
+</body>
+</html>
