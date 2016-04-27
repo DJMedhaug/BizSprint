@@ -3,11 +3,12 @@
 {% load staticfiles %}
 
 {% block head_title %}{{ block.super }}{% endblock %}
+<div id="wrapper" class="clearfix">
 
 {% block jumbotron %}
 
  <!--  :::  HOME SLIDER ::: -->
-<section id="slider" class="slider-parallax dark full-screen" style="background: url(/static/images/landing1.jpg) center;">
+<section id="slider" class="slider-parallax dark full-screen" style="background: url('/static/images/landing1.jpg') center;">
 
 			<div class="slider-parallax-inner">
 
@@ -29,5 +30,5 @@
 			    </div>
             </div>
 		</section>
-
+</div>
 {% endblock %}
