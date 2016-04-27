@@ -1,5 +1,4 @@
 {% load staticfiles %}
-{% load bootstrap3 %}
 
 
 <!DOCTYPE html>
@@ -15,7 +14,7 @@
 
 
 
-        <!-- All Css Files in Head -->
+        <!-- All CSS Files in Head -->
     {% include 'head_css.html' %}
 
   </head>
@@ -35,11 +34,7 @@
      {% endblock %}
  <div class="container">
 
-      {% if messages %}
-          {% for message in messages %}
-              <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}</div>
-          {% endfor %}
-      {% endif %}
+
 
    {% block content %}
 
