@@ -43,29 +43,14 @@
             <div id="widget-subscribe-form2-result" data-notify-type="success" data-notify-msg=""></div>
                 <form id="widget-subscribe-form2" action="include/subscribe.php" role="form" method="post" class="nobottommargin">
                     <div class="input-group input-group-lg divcenter" style="max-width:600px;">
-                        <span class="input-group-addon"><i class="icon-email2"></i></span>
+                        <span class="input-group-addon"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></span>
                         <input type="email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">
                         <span class="input-group-btn">
                             <button class="btn btn-default" type="submit">Subscribe Now</button>
                                 </span>
                             </div>
                 </form>
-                    <script>
-                            $("#widget-subscribe-form2").validate({
-                                submitHandler: function(form) {
-                                    $(form).find('.input-group-addon').find('.icon-email2').removeClass('icon-email2').addClass('icon-line-loader icon-spin');
-                                    $(form).ajaxSubmit({
-                                        target: '#widget-subscribe-form2-result',
-                                        success: function() {
-                                            $(form).find('.input-group-addon').find('.icon-line-loader').removeClass('icon-line-loader icon-spin').addClass('icon-email2');
-                                            $('#widget-subscribe-form2').find('.form-control').val('');
-                                            $('#widget-subscribe-form2-result').attr('data-notify-msg', $('#widget-subscribe-form2-result').html()).html('');
-                                            SEMICOLON.widget.notifications($('#widget-subscribe-form2-result'));
-                                        }
-                                    });
-                                }
-                            });
-                        </script>
+
 
                     </div>
                 </div>
@@ -154,31 +139,6 @@
 
 				</div>
 
-                    <script type="text/javascript">
-
-                        jQuery(document).ready(function($) {
-
-                            var ocClients = $("#oc-clients-full");
-
-                            ocClients.owlCarousel({
-                                margin: 30,
-                                loop: true,
-                                nav: false,
-                                autoplay: true,
-                                dots: false,
-                                autoplayHoverPause: true,
-                                responsive:{
-                                    0:{ items:2 },
-                                    480:{ items:3 },
-                                    768:{ items:4 },
-                                    992:{ items:5 },
-                                    1200:{ items:6 }
-                                }
-                            });
-
-                        });
-
-                    </script>
 
                 </div>
 

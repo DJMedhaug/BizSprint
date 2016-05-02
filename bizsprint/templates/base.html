@@ -12,15 +12,16 @@
 
   <title>{% block head_title %}Biz Sprint{% endblock %}</title>
 
+<link rel="shortcut icon" href="images/roundicon.ico" type="image/x-icon" />
 
 
         <!-- All CSS Files in Head -->
     {% include 'head_css.html' %}
 
   </head>
-
   <body class="stretched">
 
+    <div id="wrapper" class="clearfix">
 <!-- Document Wrapper
     ============================================= -->
 
@@ -48,9 +49,10 @@
 
    {% include "footer.html" %}
 
-    <div id="gotoTop" class="icon-angle-up"></div>
+    <div id="gotoTop" class="fa fa-chevron-up" aria-hidden="true"></div>
 
    {% include "javascript.html" %}
+    </div>
 
   </body>
 </html>
