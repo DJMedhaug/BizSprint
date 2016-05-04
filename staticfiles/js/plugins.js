@@ -329,15 +329,15 @@ jQuery.extend( jQuery.easing,
 function sm_format_twitter(twitters) {
   var statusHTML = [];
   for (var i=0; i<twitters.length; i++){
-	var username = twitters[i].user.screen_name;
-	var name = twitters[i].user.name;
-	var username_avatar = twitters[i].user.profile_image_url;
-	var status = twitters[i].text.replace(/((https?|s?ftp|ssh)\:\/\/[^"\s\<\>]*[^.,;'">\:\s\<\>\)\]\!])/g, function(url) {
-	  return '<a href="'+url+'" target="_blank">'+url+'</a>';
-	}).replace(/\B@([_a-z0-9]+)/ig, function(reply) {
-	  return  reply.charAt(0)+'<a href="http://twitter.com/'+reply.substring(1)+'" target="_blank">'+reply.substring(1)+'</a>';
-	});
-	statusHTML.push('<li><i class="icon-twitter"></i><a href="http://twitter.com/'+username+'" class="twitter-avatar" target="_blank"><img src="'+username_avatar+'" alt="'+name+'" title="'+name+'"></a><span>'+status+'</span><small><a href="http://twitter.com/'+username+'/statuses/'+twitters[i].id_str+'" target="_blank">'+relative_time(twitters[i].created_at)+'</a></small></li>');
+    var username = twitters[i].user.screen_name;
+    var name = twitters[i].user.name;
+    var username_avatar = twitters[i].user.profile_image_url;
+    var status = twitters[i].text.replace(/((https?|s?ftp|ssh)\:\/\/[^"\s\<\>]*[^.,;'">\:\s\<\>\)\]\!])/g, function(url) {
+      return '<a href="'+url+'" target="_blank">'+url+'</a>';
+    }).replace(/\B@([_a-z0-9]+)/ig, function(reply) {
+      return  reply.charAt(0)+'<a href="http://twitter.com/'+reply.substring(1)+'" target="_blank">'+reply.substring(1)+'</a>';
+    });
+    statusHTML.push('<li><i class="icon-twitter"></i><a href="http://twitter.com/'+username+'" class="twitter-avatar" target="_blank"><img src="'+username_avatar+'" alt="'+name+'" title="'+name+'"></a><span>'+status+'</span><small><a href="http://twitter.com/'+username+'/statuses/'+twitters[i].id_str+'" target="_blank">'+relative_time(twitters[i].created_at)+'</a></small></li>');
   }
   return statusHTML.join('');
 }

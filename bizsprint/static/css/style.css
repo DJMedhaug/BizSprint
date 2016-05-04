@@ -116,6 +116,8 @@ dl, dt, dd, ol, ul, li {
 	text-shadow: none;
 }
 
+.fa fa-bars {color: #df6126;}
+
 ::-moz-selection {
 	background: #df6126; /* Firefox */
 	color: #FFF;
@@ -714,13 +716,13 @@ html[xmlns] .slider-wrap {display: block;}
 }
 
 .flex-control-nav li:hover a,
-.flex-control-nav li a.flex-active { background-color: rgba(67,95,109,1);}
+.flex-control-nav li a.flex-active { background-color: rgba(67,95,109,.7);}
 
 
 /* ----------------------------------------------------------------
 	Top Bar
 -----------------------------------------------------------------*/
-
+.biz_blue {color: #435f6d;;}
 
 #top-bar {
 	position: relative;
@@ -8784,12 +8786,14 @@ ul.tab-nav li a i {
 	font-size: 15px;
 }
 
-.faqlist li a { color: #444; }
+.faqlist li a { color: #425D6C; }
 
 .faqlist li a:hover { color: #df6126 !important; }
 
-
-/* ----------------------------------------------------------------
+.fa-caret-right {
+	position: relative;
+}
+	/* ----------------------------------------------------------------
 	Clients
 -----------------------------------------------------------------*/
 
@@ -9114,6 +9118,7 @@ body:not(.device-touch) .clients-grid li a {
 
 .team-title h4 {
 	display: block;
+	color: #425D6C;
 	margin-bottom: 0;
 	font-size: 19px;
 	text-transform: uppercase;
@@ -9520,8 +9525,9 @@ body:not(.device-touch) .team-overlay {
 }
 
 .widget .counter + h5 { opacity: 0.7; }
-
-
+.foot_mail {margin-top: 50px;}
+.widget .subscribe-form-result {
+	margin-top: 50px;}
 /* ----------------------------------------------------------------
 	Animated Rounded Skills
 -----------------------------------------------------------------*/
@@ -11370,6 +11376,24 @@ body:not(.device-touch) .tagcloud a {
 
 /* Widget - Testimonial & Twitter
 -----------------------------------------------------------------*/
+
+.twitter-feed:not(.twitter-feed-avatar) a.twitter-avatar { display: none; }
+
+.twitter-feed.twitter-feed-avatar i.icon-twitter { display: none; }
+
+.twitter-feed-avatar { margin-left: 44px; }
+
+.twitter-feed-avatar > li a.twitter-avatar {
+    display: block;
+    position: absolute;
+    left: -44px;
+    text-align: center;
+    top: 2px;
+    width: 32px;
+    height: 32px;
+}
+
+.twitter-feed-avatar a.twitter-avatar img { border-radius: 50%; }
 
 .widget .testimonial.no-image .testi-image { display: none; }
 

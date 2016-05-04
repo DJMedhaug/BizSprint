@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
 
-{% block content %}
+{% block mini %}
         <!-- Page Title
         ============================================= -->
         <section id="page-title" class="page-title-mini">
 
             <div class="container clearfix">
-                <h1>About Us</h1>
+                <h1 class="biz_blue">About Us</h1>
                 
                 <ol class="breadcrumb">
                     <li><a href="home.html">Home</a></li>
@@ -16,7 +16,8 @@
             </div>
 
         </section><!-- #page-title end -->
-
+{% endblock %}
+{% block content %}
         <!-- Content
         ============================================= -->
         <section id="content">
@@ -28,7 +29,7 @@
                     <div class="col_full">
 
                         <div class="heading-block-dark center nobottomborder">
-                            <h2>ABOUT Biz Sprint</h2>
+                            <h2 class="biz_blue">Biz Sprint</h2>
 
                             <p>Lorem ipsum dolor sit amet, odio modo ludus ei vis, ea liber iudico nec. Ut iudicabit consequat expetendis ius. Ius ad adhuc clita, sumo liber aeterno ei pro. Euismod nostrum erroribus ei vis. Vix graeco utamur ei, in sea clita detracto.
 
@@ -53,7 +54,7 @@ Cu ius modo dolor. Ipsum incorrupte ut sit, an euismod fierent has. Facilis detr
                  
 
                      <div class="heading-block-dark center">
-                        <h2>Meet The Team</h2>
+                        <h2 class="biz_blue">Meet The Team</h2>
 
                     </div>
 
@@ -62,19 +63,20 @@ Cu ius modo dolor. Ipsum incorrupte ut sit, an euismod fierent has. Facilis detr
                         <div class="col-md-6 bottommargin">
 
                             <div class="team team-list clearfix">
-                                <div class="team-image">
+                                <div class="team-image" data-animate="zoomInLeft">
                                     <img src="/static/images/team/sheri.jpg" alt="Sheri">
                                 </div>
                                 <div class="team-desc">
                                     <div class="team-title"><h4>Sheri Dover</h4><span>Director</span></div>
                                     <div class="team-content"></div>
-                                    <a href="#" class="social-icon si-rounded si-small si-facebook">
-                                        <i class="icon-facebook"></i>
-                                        <i class="icon-facebook"></i>
+                                    <a href="#" class="btn btn-social-icon btn-facebook">
+                                         <span class="fa fa-facebook"></span>
                                     </a>
-                                    <a href="#" class="social-icon si-rounded si-small si-linkedin">
-                                        <i class="icon-linkedin"></i>
-                                        <i class="icon-linkedin"></i>
+                                     <a href="#" class="btn btn-social-icon btn-twitter">
+                                         <span class="fa fa-twitter"></span>
+                                    </a>
+                                    <a href="#" class="btn btn-social-icon btn-linkedin">
+                                         <span class="fa fa-linkedin"></span>
                                     </a>
                                 </div>
                             </div>
@@ -84,19 +86,18 @@ Cu ius modo dolor. Ipsum incorrupte ut sit, an euismod fierent has. Facilis detr
                         <div class="col-md-6 bottommargin">
 
                             <div class="team team-list clearfix">
-                                <div class="team-image">
+                                <div class="team-image" data-animate="zoomInRight">
                                     <img src="/static/images/team/chrisjones.jpg" alt="Chris">
                                 </div>
                                 <div class="team-desc">
                                     <div class="team-title"><h4>Chris Jones</h4><span>IT Manager / Advisor</span></div>
                                     <div class="team-content"></div>
-                                    <a href="#" class="social-icon si-rounded si-small si-facebook">
-                                        <i class="fa fa-facebook" aria-hidden="true"></i>
-                                        <i class="fa fa-facebook" aria-hidden="true"></i>
+
+                                    <a href="#" class="btn btn-social-icon btn-github">
+                                         <span class="fa fa-github"></span>
                                     </a>
-                                    <a href="#" class="social-icon si-rounded si-small si-linkedin">
-                                        <i class="fa fa-linkedin" aria-hidden="true"></i>
-                                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                    <a href="#" class="btn btn-social-icon btn-linkedin">
+                                         <span class="fa fa-linkedin"></span>
                                     </a>
                                 </div>
                             </div>
@@ -107,7 +108,7 @@ Cu ius modo dolor. Ipsum incorrupte ut sit, an euismod fierent has. Facilis detr
 
                 <div class="section topmargin-sm footer-stick">
 
-                    <h4 class="uppercase center"><span>ATTENDEES</span> FEEDBACK</h4>
+                    <h4 class="uppercase center biz_blue"><span>ATTENDEES</span> FEEDBACK</h4>
 
                     <div class="fslider testimonial testimonial-full" data-animation="fade" data-arrows="false">
                         <div class="flexslider">

@@ -20,7 +20,9 @@ urlpatterns = [
     url(r'^accounts/', include('allauth.urls')),
 
     # Your stuff: custom urls includes go here
-    url(r'^faqs/$', TemplateView.as_view(template_name='faqs.html'), name='faqs'),
+    url('faqs', TemplateView.as_view(template_name='faqs.html'), name='faqs'),
+    url('blog', TemplateView.as_view(template_name='blog-single-small.html'), name='blog'),
+    url('login', TemplateView.as_view(template_name='login-register.html'), name='login'),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

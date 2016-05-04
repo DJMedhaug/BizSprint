@@ -19,12 +19,23 @@
 							<h1 data-animate="fadeInUp"><strong>Welcome To Biz Sprint</strong></h1>
 							<span data-animate="fadeInUp" data-delay="300">Explore upcoming events, sign up for events &amp; join the community.</span>
 						</div>
+                        <div class="col-lg-6 col-lg-offset-3">
+                            {% csrf_token %}
+                            {{ form|crispy }}
+                        <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Enter email to Sign Up">
+                        <span class="input-group-btn">
+                        <button class="btn btn-success" type="button">Sign Up</button>
+                            </span>
+                    </div>
+                        </div>
+                        </div>
 
 						<div class="accordion accordion-lg divcenter nobottommargin clearfix" style="max-width: 550px;"></div>
 
-					<a href="#" data-scrollto="#section-features" class="one-page-arrow"><i class="icon-angle-down infinite animated fadeInDown"></i></a>
+					<a href="#" data-scrollto="#section-features" class="one-page-arrow"><i class="fa fa-angle-down infinite animated fadeInDown"></i></a>
 
-				    </div>
+                </div>
 
 			    </div>
             </div>
@@ -32,31 +43,43 @@
 
 {% endblock %}
 
-{% block content %}
+{#{% block email %}#}
+{# <div class="section nobottommargin">#}
+{#        <div class="container clearfix">#}
+{#            <div class="heading-block-dark center">#}
+{#                <h3>Receive <span>regular</span> Event Updates</h3>#}
+{#            </div>#}
+{##}
+{#            <div id="widget-subscribe-form2-result" data-notify-type="success" data-notify-msg=""></div>#}
+{#                <form id="widget-subscribe-form2" action="include/subscribe.php" role="form" method="post" class="nobottommargin">#}
+{#                    <div class="input-group input-group-lg divcenter" style="max-width:600px;">#}
+{#                        <span class="input-group-addon"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></span>#}
+{#                        <input type="email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">#}
+{#                        <span class="input-group-btn">#}
+{#                            <button class="btn btn-default" type="submit">Subscribe Now</button>#}
+{#                                </span>#}
+{#                            </div>#}
+{#                </form>#}
+{##}
+{##}
+{#                    </div>#}
+{#                </div>#}
+{##}
+{#{% endblock %}#}
 
-    <div class="section nobottommargin">
-        <div class="container clearfix">
-            <div class="heading-block-dark center">
-                <h3>Receive <span>regular</span> Event Updates</h3>
-            </div>
+{#{% block twitter %}#}
+{#    <div class="container">#}
+{#    <div class="col-sm-9 col-md-6">#}
+{#        <div class="widget clearfix">#}
+{##}
+{#<a class="twitter-timeline" href="https://twitter.com/search?q=from%3Aeventbrite%2BOR%2Bfrom%3APDXCodeGuild" data-widget-id="727239326791147522">Tweets about from:eventbrite+OR+from:PDXCodeGuild</a>#}
+{#<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>#}
+{#        </div>#}
+{#    </div>#}
+{#    </div>#}
+{#{% endblock %}#}
 
-            <div id="widget-subscribe-form2-result" data-notify-type="success" data-notify-msg=""></div>
-                <form id="widget-subscribe-form2" action="include/subscribe.php" role="form" method="post" class="nobottommargin">
-                    <div class="input-group input-group-lg divcenter" style="max-width:600px;">
-                        <span class="input-group-addon"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></span>
-                        <input type="email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="submit">Subscribe Now</button>
-                                </span>
-                            </div>
-                </form>
-
-
-                    </div>
-                </div>
-
-
-
+{% block upcoming %}
                 <div class="container clearfix">
 
                     <br>
@@ -108,11 +131,11 @@
 
                        <div class="center" data-animate="fadeInDown">
 
-                         <a href="index-events.html" data-scrollto="#section-pricing" class="button button-3d button-gray  nobottommargin">VIEW MORE UPCOMING</a>
+                         <a href="index-events.html" data-scrollto="#section-pricing" class="button button-3d button-gray  nobottommargin">VIEW MORE UPCOMING EVENTS</a>
 
                         </div>
 
-<div class="divider divider-short divider-center"><i class="icon-crop"></i></div>
+<div class="divider divider-short divider-center"><i class="fa fa-crop"></i></div>
 
 
 

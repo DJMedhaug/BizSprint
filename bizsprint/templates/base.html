@@ -27,12 +27,24 @@
 
     {% include 'navbar.html' %}
 
+    {% block mini %}
+
+    {% endblock %}
+
 
     {% block jumbotron %}
 
 
 
      {% endblock %}
+
+    {% block email %}
+
+    {% endblock %}
+
+    {% block twitter %}
+    {% endblock %}
+
  <div class="container">
 
 
@@ -40,6 +52,10 @@
    {% block content %}
 
     {% endblock %}
+
+{% block upcoming %}
+
+ {% endblock %}
 
 
     </div> <!-- /container -->
