@@ -6,7 +6,17 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as AuthUserAdmin
 from django.contrib.auth.forms import UserChangeForm, UserCreationForm
 
-from .models import User
+from .forms import SignUpForm
+from .models import User, SignUp
+
+
+class SignUpAdmin(admin.ModelAdmin):
+    list_display = ["__unicode__", "timestamp", "updated"]
+    form = SignUpForm
+
+
+
+admin.site.register(SignUp, SignUpAdmin)
 
 
 class MyUserChangeForm(UserChangeForm):

@@ -8791,7 +8791,12 @@ ul.tab-nav li a i {
 .faqlist li a:hover { color: #df6126 !important; }
 
 .fa-caret-right {
-	position: relative;
+	position: absolute;
+	left: -1.75em;
+	width: 1.75em;
+	text-align: center;
+	top: 1px;
+	width: 14px;
 }
 	/* ----------------------------------------------------------------
 	Clients
@@ -9086,12 +9091,14 @@ body:not(.device-touch) .clients-grid li a {
 
 
 .team,
-.team-image { position: relative; }
+.team-image { display: inline-block; position: relative; }
 
 .team-image > a,
 .team-image img {
-	display: block;
+	display: inline-block;
 	width: 100%;
+  border: 5px solid #435f6d;
+
 }
 
 .team-desc { text-align: center; }

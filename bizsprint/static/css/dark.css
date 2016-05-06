@@ -1020,7 +1020,7 @@ body.top-search-open .dark #header-wrap:not(.not-dark) #top-search a,
 
 #footer.dark,
 .dark #footer {
-	background-color: #425d6c;
+	background-color: #435f6d;
 	color: #CCC;
 	border-top-color: rgba(0,0,0,0.2);
 }
@@ -1031,7 +1031,7 @@ body.top-search-open .dark #header-wrap:not(.not-dark) #top-search a,
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
 }
 
-.dark #copyrights i.footer-icon { color: rgba(255,255,255,0.3); }
+.dark #copyrights i.footer-icon { color: rgba(255,255,255,0.5); }
 
 .dark .copyright-links a {
 	color: rgba(255,255,255,0.25);

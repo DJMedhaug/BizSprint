@@ -7,6 +7,19 @@ from django.views.generic import DetailView, ListView, RedirectView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .models import User
+from django.shortcuts import render
+
+
+def home(request):
+    active = 'Welcome'
+    if request.user.is_authenticated():
+        active = "My Title %s" %(request.user)
+    #add a form
+    context = {
+        "active": active,
+
+    }
+    return render(request, "{% url 'home' %}", context)
 
 
 class UserDetailView(LoginRequiredMixin, DetailView):
@@ -25,7 +38,6 @@ class UserRedirectView(LoginRequiredMixin, RedirectView):
 
 
 class UserUpdateView(LoginRequiredMixin, UpdateView):
-
     fields = ['name', ]
 
     # we already imported User in the view code above, remember?

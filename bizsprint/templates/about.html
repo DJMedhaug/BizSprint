@@ -10,7 +10,7 @@
                 <h1 class="biz_blue">About Us</h1>
                 
                 <ol class="breadcrumb">
-                    <li><a href="home.html">Home</a></li>
+                    <li><a href={% url 'home' %}>Home</a></li>
                     <li class="active">About Us</li>
                 </ol>
             </div>
@@ -59,8 +59,8 @@ Cu ius modo dolor. Ipsum incorrupte ut sit, an euismod fierent has. Facilis detr
                     </div>
 
                     <div class="container clearfix">
-
-                        <div class="col-md-6 bottommargin">
+                        <div class="col-md-12">
+                        <div class="col-md-6 col-centered">
 
                             <div class="team team-list clearfix">
                                 <div class="team-image" data-animate="zoomInLeft">
@@ -83,7 +83,7 @@ Cu ius modo dolor. Ipsum incorrupte ut sit, an euismod fierent has. Facilis detr
 
                         </div>
 
-                        <div class="col-md-6 bottommargin">
+                        <div class="col-md-6 col-centered">
 
                             <div class="team team-list clearfix">
                                 <div class="team-image" data-animate="zoomInRight">
@@ -103,7 +103,12 @@ Cu ius modo dolor. Ipsum incorrupte ut sit, an euismod fierent has. Facilis detr
                             </div>
 
                         </div>
+                        </div>
+                    </div>
 
+                </section>
+                     {% endblock %}
+    {% block footer_stick %}
                         <div class="clear"></div>
 
                 <div class="section topmargin-sm footer-stick">
@@ -155,9 +160,7 @@ Cu ius modo dolor. Ipsum incorrupte ut sit, an euismod fierent has. Facilis detr
 
                 </div>
 
-            </div>
-
-        </section><!-- #content end -->
+            <!-- #content end -->
 
 
-   {% endblock %}
+  {% endblock %}

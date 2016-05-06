@@ -5,7 +5,6 @@
 {% block head_title %}{{ block.super }}{% endblock %}
 
 {% block jumbotron %}
-
  <!--  :::  HOME SLIDER ::: -->
 <section id="slider" class="slider-parallax dark full-screen" style="background: url('/static/images/landing1.jpg') center;">
 
@@ -16,7 +15,7 @@
 					<div class="vertical-middle">
 
 						<div class="heading-block center nobottomborder">
-							<h1 data-animate="fadeInUp"><strong>Welcome To Biz Sprint</strong></h1>
+							<h1 {{ active }}> </h1>
 							<span data-animate="fadeInUp" data-delay="300">Explore upcoming events, sign up for events &amp; join the community.</span>
 						</div>
                         <div class="col-lg-6 col-lg-offset-3">
@@ -99,8 +98,8 @@
                                     <h2>PDX Women in Tech (PDXWIT) Happy Hour Networking Event</h2>
                                 </div>
                                 <ul class="entry-meta clearfix">
-                                    <li><a href="events-calendar.html"><i class="icon-calendar3"></i>TUE, APR 19 AT 4:30 PM</a></li>
-                                    <li><a href="maps.html"><i class="icon-map-marker2"></i> PORTLAND, OR</a></li>
+                                    <li><a href="events-calendar.html"><i class="fa fa-calendar" aria-hidden="true"></i>TUE, APR 19 AT 4:30 PM</a></li>
+                                    <li><a href="maps.html"><i class="fa fa-map-marker" aria-hidden="true"></i> PORTLAND, OR</a></li>
                                 </ul>
                                 <div class="entry-content">
                                     <p>PDX Women in Tech exists to celebrate professional women in the Portland-metro area who work with, manage, lead or have an interest in technology. Whether you are developing event-driven, non-blocking applications in node.js or setting technology strategy for a Fortune 500 company - or anything in between - come join us!</p>
@@ -118,8 +117,8 @@
                                     <h2>Tech Talks</h2>
                                 </div>
                                 <ul class="entry-meta clearfix">
-                                    <li><a href="events-calendar.html"><i class="icon-calendar3"></i> Friday, May 6, 2016 from 8:00 AM to 2:00 PM</a></li>
-                                    <li><a href="maps.html"><i class="icon-map-marker2"></i>  Oregon Tech - 27500 SW Parkway Ave, Wilsonville, OR 97070 </a></li>
+                                    <li><a href="events-calendar.html"><i class="fa fa-calendar" aria-hidden="true"></i> Friday, May 6, 2016 from 8:00 AM to 2:00 PM</a></li>
+                                    <li><a href="maps.html"><i class="fa fa-map-marker" aria-hidden="true"></i>  Oregon Tech - 27500 SW Parkway Ave, Wilsonville, OR 97070 </a></li>
                                 </ul>
                                 <div class="entry-content">
                                     <p>TECH Talks is a one-day seminar produced entirely by students from Oregon Institute of Technology, featuring speakers who are shaping the future in the fields of Technology, Engineering, Creativity and Health. It brings exciting current innovations in the TECH fields to students; and presents cutting edge technologies, which help to connect them (the next generation of industry leaders) with prospective employers. The event also introduces to industry leaders, the opportunities Oregon Tech students have to develop their non-technical skills – such as writing, teamwork, and problem solving – which prepare them to be more well-rounded professionals.</p>

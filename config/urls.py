@@ -8,6 +8,7 @@ from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
 
+
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='home.html'), name='home'),
     url(r'^about/$', TemplateView.as_view(template_name='about.html'), name='about'),
@@ -20,9 +21,12 @@ urlpatterns = [
     url(r'^accounts/', include('allauth.urls')),
 
     # Your stuff: custom urls includes go here
-    url('faqs', TemplateView.as_view(template_name='faqs.html'), name='faqs'),
-    url('blog', TemplateView.as_view(template_name='blog-single-small.html'), name='blog'),
-    url('login', TemplateView.as_view(template_name='login-register.html'), name='login'),
+    url(r'^events', TemplateView.as_view(template_name='events.html'), name='events'),
+    url(r'^blog', TemplateView.as_view(template_name='blog-single-small.html'), name='blog'),
+    url(r'^faqs/', TemplateView.as_view(template_name='faqs.html'), name='faqs'),
+    url(r'^contact', TemplateView.as_view(template_name='contact.html'), name='contact'),
+    url(r'^login', TemplateView.as_view(template_name='login-register.html'), name='login'),
+
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

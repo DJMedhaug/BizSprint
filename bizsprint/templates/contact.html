@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 
 {% block mini %}
 		<!-- Page Title
@@ -39,8 +40,9 @@
 
 							<div class="contact-form-result"></div>
 
-							<form class="nobottommargin" id="template-contactform" name="template-contactform" action="include/sendemail-recaptcha.php" method="post">
-
+							<form role="form" class="nobottommargin" id="template-contactform" name="template-contactform" action="" method="post">
+                                {% csrf_token %}
+                                {{ form|crispy }}
 								<div class="form-process"></div>
 
 								<div class="col_one_third">

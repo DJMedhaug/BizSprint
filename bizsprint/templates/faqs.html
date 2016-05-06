@@ -1,8 +1,7 @@
 {% extends "base.html" %}
 
 
-{% block content %}
-
+{% block mini %}
         <!-- Page Title
         ============================================= -->
         <section id="page-title" class="page-title-mini">
@@ -16,6 +15,9 @@
             </div>
 
         </section><!-- #page-title end -->
+{% endblock %}
+
+{% block content %}
 
         <!-- Content
         ============================================= -->
@@ -36,14 +38,14 @@
                             </div>
 
                             <ul class="iconlist faqlist">
-                                <li><i class="fa fa-caret-right"></i><strong><a href="#" data-scrollto="#faq-1">Is this event for me?</a></strong></li>
+                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><strong><a href="#" data-scrollto="#faq-1">Is this event for me?</a></strong></li>
                                 <li><i class="fa fa-caret-right" aria-hidden="true"></i><strong><a href="#" data-scrollto="#faq-3">How do I register?</a></strong></li>
-                                <li><i class="icon-caret-right"></i><strong><a href="#" data-scrollto="#faq-4">How do I prepare?</a></strong></li>
-                                <li><i class="icon-caret-right"></i><strong><a href="#" data-scrollto="#faq-5">What should I bring?</a></strong></li>
-                                <li><i class="icon-caret-right"></i><strong><a href="#" data-scrollto="#faq-6">What types of ideas can I pitch?</a></strong></li>
-                                <li><i class="icon-caret-right"></i><strong><a href="#" data-scrollto="#faq-7">Can I pitch my existing business?</a></strong></li>
-                                <li><i class="icon-caret-right"></i><strong><a href="#" data-scrollto="#faq-8">What if my idea doesn’t get selected?</a></strong></li>
-                                <li><i class="icon-caret-right"></i><strong><a href="#" data-scrollto="#faq-9">Am I expected to work nonstop for 54 hours?</a></strong></li>
+                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><strong><a href="#" data-scrollto="#faq-4">How do I prepare?</a></strong></li>
+                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><strong><a href="#" data-scrollto="#faq-5">What should I bring?</a></strong></li>
+                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><strong><a href="#" data-scrollto="#faq-6">What types of ideas can I pitch?</a></strong></li>
+                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><strong><a href="#" data-scrollto="#faq-7">Can I pitch my existing business?</a></strong></li>
+                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><strong><a href="#" data-scrollto="#faq-8">What if my idea doesn’t get selected?</a></strong></li>
+                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><strong><a href="#" data-scrollto="#faq-9">Am I expected to work nonstop for 54 hours?</a></strong></li>
                                 <!--<li><i class="icon-caret-right"></i><strong><a href="#" data-scrollto="#faq-10">Are there bathrooms on the bus?</a></strong></li>-->
                                 <!--<li><i class="icon-caret-right"></i><strong><a href="#" data-scrollto="#faq-11">What is there to do on the long bus rides?</a></strong></li>-->
                                 <!--<li><i class="icon-caret-right"></i><strong><a href="#" data-scrollto="#faq-12">Are there refunds if I can no longer make it on a trip?</a></strong></li>-->
@@ -52,7 +54,7 @@
                                 <!--<li><i class="icon-caret-right"></i><strong><a href="#" data-scrollto="#faq-15">Hotel/Resort Trips: Can we smoke in our rooms?</a></strong></li>-->
                             </ul>
 
-                            <div class="divider"><i class="icon-circle"></i></div>
+                            <div class="divider"><i class="fa fa-circle" aria-hidden="true"></i></div>
 
                             <h3 id="faq-1"><strong>Q.</strong> Is this event for me?</h3>
                             <p>Startup Weekend attendees’ backgrounds are roughly 50% technical (developers, coders, designers) and 50% business (marketing, finance, law). What unites all attendees is a common interest in entrepreneurship: whether a serial entrepreneur or new to the startup scene, every attendee is interested in working with a like-minded, motivated and skilled team to develop a product or business in one weekend. If this sounds like you, this is the event for you!</p>
@@ -92,22 +94,22 @@
                             <h3 id="faq-6"><strong>Q.</strong> What types of ideas can I pitch?</h3>
                             <p>Any business ideas are eligible (whether for-profit, ‘social’ businesses, non-profit organizations, etc.), however the event is strongly tech-oriented. Approximately 95% of all ideas are mobile or web focused, and given the short time-frame, we strongly recommend that even non-tech ideas focus on a tech-related deliverable (i.e., website) by Sunday.</p>
 
-                            <div class="divider divider-right"><a href="#" data-scrollto="#faqs-list">class="fa fa-angle-up" aria-hidden="true"></i></a></div>
+                            <div class="divider divider-right"><a href="#" data-scrollto="#faqs-list"><i class="fa fa-angle-up" aria-hidden="true"></i></a></div>
 
                             <h3 id="faq-7"><strong>Q.</strong> Can I pitch my existing business?</h3>
                             <p>No. Startup Weekend is designed to be the most effective platform for growing new businesses from the ground up over the course of a weekend. A key facet of the weekend – and a central value for participants – is the spirit of complete collaboration, buy-in and ownership. We’ve found that having existing businesses in the mix undermines this spirit, in addition to creating an imbalance between those ideas that are truly ground-level.</p>
 
-                            <div class="divider divider-right"><a href="#" data-scrollto="#faqs-list">class="fa fa-angle-up" aria-hidden="true"></i></a></div>
+                            <div class="divider divider-right"><a href="#" data-scrollto="#faqs-list"><i class="fa fa-angle-up" aria-hidden="true"></i></a></div>
 
                             <h3 id="faq-8"><strong>Q.</strong> What if my idea doesn’t get selected?</h3>
                             <p>The purpose of the Friday crowd-sourcing isn’t to exclude certain ideas, but simply to highlight the most popular/high-potential pitches and end up with a manageable number of teams – ensuring that each team has a variety of backgrounds/skills. If your idea isn’t selected but you’ve formed a team around the idea, you’re welcome to work on it over the weekend. If you decide to do so, however, please tell the event Organizer, as this may be an issue regarding your teams’ eligibility for prizes.</p>
 
-                            <div class="divider divider-right"><a href="#" data-scrollto="#faqs-list">class="fa fa-angle-up" aria-hidden="true"></i></a></div>
+                            <div class="divider divider-right"><a href="#" data-scrollto="#faqs-list"><i class="fa fa-angle-up" aria-hidden="true"></i></a></div>
 
                             <h3 id="faq-9"><strong>Q.</strong> Am I expected to work nonstop for 54 hours?</h3>
                             <p>No. At some events, certain teams will decide to work all through Friday and/or Saturday night, but this is by no means obligatory or expected. Whether or not you are allowed to work at the venue at night depends on the venue’s opening hours – please ask your event’s Organizer.</p>
 
-                            <div class="divider divider-right"><a href="#" data-scrollto="#faqs-list">class="fa fa-angle-up" aria-hidden="true"></i></a></div>
+                            <div class="divider divider-right"><a href="#" data-scrollto="#faqs-list"><i class="fa fa-angle-up" aria-hidden="true"></i></a></div>
 
                             <!--<h3 id="faq-10"><strong>Q.</strong> Are there bathrooms on the bus?</h3>-->
                             <!--<p>Yes, there are bathrooms on the bus.</p>-->
