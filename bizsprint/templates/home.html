@@ -15,18 +15,14 @@
 					<div class="vertical-middle">
 
 						<div class="heading-block center nobottomborder">
-							<h1 {{ active }}> </h1>
+							<h1 data-animate="fadeInUp"><strong>{{ title }}</strong></h1>
 							<span data-animate="fadeInUp" data-delay="300">Explore upcoming events, sign up for events &amp; join the community.</span>
 						</div>
                         <div class="col-lg-6 col-lg-offset-3">
-                            {% csrf_token %}
-                            {{ form|crispy }}
-                        <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Enter email to Sign Up">
-                        <span class="input-group-btn">
-                        <button class="btn btn-success" type="button">Sign Up</button>
-                            </span>
-                    </div>
+                            <form method="POST" action="">
+                           {{ form }}
+                                <input type="submit" value="Sign Up"/>{% csrf_token %}
+                            </form>
                         </div>
                         </div>
 

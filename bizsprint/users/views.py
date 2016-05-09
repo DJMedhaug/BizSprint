@@ -8,18 +8,20 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .models import User
 from django.shortcuts import render
-
+from .forms import SignUpForm
 
 def home(request):
-    active = 'Welcome'
-    if request.user.is_authenticated():
-        active = "My Title %s" %(request.user)
-    #add a form
+    title = 'Welcome'
+    # if request.user.is_authenticated():
+    #     title = "My Title %s" %(request.user)
+    #
+    # #add a form
+    form = SignUpForm()
     context = {
-        "active": active,
-
+        "title": title,
+        "form": form
     }
-    return render(request, "{% url 'home' %}", context)
+    return render(request, "home.html", context)
 
 
 class UserDetailView(LoginRequiredMixin, DetailView):
