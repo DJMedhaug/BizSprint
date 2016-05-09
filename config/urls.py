@@ -11,9 +11,9 @@ from django.views import defaults as default_views
 
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='home.html'), name='home'),
-    url(r'^about/$', TemplateView.as_view(template_name='about.html'), name='about'),
+    url(r'^about', TemplateView.as_view(template_name='about.html'), name='about'),
 
-    # Django Admin, use {% url 'admin:index' %}
+    # Django Admin, use {% url 'admin:index' %}yeah he does
     url(settings.ADMIN_URL, include(admin.site.urls)),
 
     # User management
@@ -24,7 +24,7 @@ urlpatterns = [
     url(r'^events', TemplateView.as_view(template_name='events.html'), name='events'),
     url(r'^blog', TemplateView.as_view(template_name='blog-single-small.html'), name='blog'),
     url(r'^faqs', TemplateView.as_view(template_name='faqs.html'), name='faqs'),
-    url(r'^contact', TemplateView.as_view(template_name='contact.html'), name='contact'),
+    url(r'^contact', TemplateView.as_view(template_name='forms.html'), name='contact'),
     url(r'^login', TemplateView.as_view(template_name='login-register.html'), name='login'),
 
 
