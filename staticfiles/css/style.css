@@ -9100,7 +9100,9 @@ body:not(.device-touch) .clients-grid li a {
   border: 5px solid #435f6d;
 
 }
-
+.title_align_center {
+	text-align: center;
+}
 .team-desc { text-align: center; }
 
 .team-desc.team-desc-bg {

@@ -8,14 +8,16 @@ from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 
 
+# Create your models here.
 class SignUp(models.Model):
-    email = models.EmailField()
-    full_name = models.CharField(max_length=120, blank=False, null=True)
-    timestamp = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now_add=True)
+	email = models.EmailField()
+	full_name = models.CharField(max_length=120, blank=True, null=True)
+	timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
+	updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
-    def __unicode__(self):
-        return self.email
+	def __unicode__(self): #Python 3.3 is __str__
+		return self.email
+
 
 
 @python_2_unicode_compatible

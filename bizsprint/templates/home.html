@@ -1,12 +1,16 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
-{% load staticfiles %}
 
-{% block head_title %}{{ block.super }}{% endblock %}
+{% block head_title %}Welcome to | {{ block.super }}{% endblock %}
+
+<style>
+{% block style %}
+{% endblock %}
+</style>
 
 {% block jumbotron %}
  <!--  :::  HOME SLIDER ::: -->
-<section id="slider" class="slider-parallax dark full-screen" style="background: url('/static/images/landing1.jpg') center;">
+<section id="slider" class="slider-parallax dark full-screen" style="background: url('/static/images/fandam.jpg') center;">
 
 			<div class="slider-parallax-inner">
 
@@ -15,7 +19,7 @@
 					<div class="vertical-middle">
 
 						<div class="heading-block center nobottomborder">
-							<h1 data-animate="fadeInUp"><strong>{{ user }}</strong></h1>
+							<h1 data-animate="fadeInUp"><strong>{{ title }}</strong></h1>
 							<span data-animate="fadeInUp" data-delay="300">Explore upcoming events, sign up for events &amp; join the community.</span>
 						</div>
 
@@ -23,7 +27,7 @@
                             <form method="POST" action="">
                                 {% csrf_token %}
                                 {{ form }}
-                                <input type="submit" value="Sign Up"/>
+                                <input class="btn btn-primary" type="submit" value="Sign Up"/>
 
                             </form>
                         </div>
