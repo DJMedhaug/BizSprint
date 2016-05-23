@@ -17,6 +17,19 @@ APPS_DIR = ROOT_DIR.path('bizsprint')
 
 env = environ.Env()
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'dmedhaug@gmail.com'
+EMAIL_HOST_PASSWORD = 'rptohcajqrmokglk'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+'''
+If using gmail, you will need to unlock captcha
+to enable Django to send for you:
+https://accounts.gooogle.com/displayunlockcaptcha
+'''
+
+
 # APP CONFIGURATION
 # ------------------------------------------------------------------------------
 DJANGO_APPS = (

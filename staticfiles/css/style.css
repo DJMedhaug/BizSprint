@@ -11435,7 +11435,6 @@ body:not(.device-touch) .tagcloud a {
 
 /* Widget - Quick Contact Form
 -----------------------------------------------------------------*/
-
 .quick-contact-widget .form-control,
 .quick-contact-widget .input-group,
 .quick-contact-widget .sm-form-control { margin-bottom: 10px; }

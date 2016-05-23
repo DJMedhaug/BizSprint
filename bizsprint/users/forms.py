@@ -10,10 +10,10 @@ def must_be_empty(value):
 
 
 class ContactForm(forms.Form):
-    name = forms.CharField(required=False)
-    email = forms.EmailField()
-    phone = forms.IntegerField()
-    message = forms.CharField(widget=forms.Textarea)
+    name = forms.CharField(required=True)
+    email = forms.EmailField(required=True)
+    phone = forms.IntegerField(required=False)
+    message = forms.CharField(required=True, widget=forms.Textarea)
     honeypot = forms.CharField(required=False,
                                widget=forms.HiddenInput,
                                label="Leave empty",

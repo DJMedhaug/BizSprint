@@ -66,14 +66,14 @@ def contact(request):
                 form_message,
                 form_email)
             some_html_message = "\n<h1>hello</h1>\n"
-            send_mail(subject, contact_message, from_email, to_email, html_message=some_html_message, fail_silently=True)
+            send_mail(subject, contact_message, from_email, to_email, html_message=some_html_message, fail_silently=False)
 
         context = {
             "form": form,
             "title": title,
             "title_align_center": title_align_center,
         }
-        return HttpResponseRedirect("confirmation.html")
+        return HttpResponseRedirect("/confirmation/")
     context = {
         "form": form,
         "title": title,

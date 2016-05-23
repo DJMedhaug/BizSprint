@@ -19,23 +19,67 @@
 
         </section><!-- #page-title end -->
 {% endblock %}
-
 {% block content %}
 
-    <div class='row'>
-        <div class='col-sm-6 col-sm-offset-3'>
-            {% if title %}
-                <h1 class='{% if title_align_center %}text-align-center{% endif %}'>{{ title }}</h1>
-            {% endif %}
-            <form method="post" class="uniForm" action="/contact/">
-                {% csrf_token %}
-                {{ form|crispy }}
-                <input class='btn btn-default' type='submit' value='Submit'/>
-            </form>
-        </div>
-    </div>
+
+<section id="content">
+
+			<div class="content-wrap">
+
+				<div class="container clearfix">
+
+					<!-- Contact Form
+					============================================= -->
+					<div class="col_half">
+
+
+
+						<div>
+
+							<div class="contact-form-result"></div>
+
+							<form class="uniForm" action="/contact/" method="post">
+                                    {% csrf_token %}
+                                    {{ form|crispy }}
+
+
+                                <div class="col_full">
+
+                                    <div class="g-recaptcha" data-sitekey="6LdSsSATAAAAAJoJZ5t_kU49ApKkVP0ankO0VRfA
+"></div>
+
+								</div>
+
+
+                                    <input class='btn btn-default' type='submit' value='Submit'/>
+
+
+
+							</form>
+						</div>
+
+					</div><!-- Contact Form End -->
+
+					<!-- Google Map
+					============================================= -->
+					<div class="col_half col_last">
+
+						<div class="widget visible-lg visible-md clearfix">
+							<h4>Our Location</h4>
+
+							<iframe src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJqcexvGsKlVQRS23cQFZaaOE&key=AIzaSyBK1tVedx2xkh0JEsWXS4o7YbQUEcvBCnY" width="600" height="430" frameborder="0" style="border:0" allowfullscreen></iframe>
+						</div><!-- Google Map End -->
+
+					<div class="clear"></div>
+
+					<!-- Contact Info
+					============================================= -->
+
+
+		</section><!-- #content end -->
 
 {% endblock %}
+
 
 
 
