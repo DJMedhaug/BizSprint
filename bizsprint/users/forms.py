@@ -26,8 +26,8 @@ class ContactForm(forms.Form):
         email = cleaned_data.get('email')
         verify = cleaned_data.get('verify_email')
 
-        if email != verify:
-            raise forms.ValidationError("Please enter the same email")
+        # if email != verify:
+        #     raise forms.ValidationError("Please enter the same email")
 
 
 

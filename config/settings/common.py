@@ -9,25 +9,14 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/dev/ref/settings/
 """
 from __future__ import absolute_import, unicode_literals
-
+import os
 import environ
+
 
 ROOT_DIR = environ.Path(__file__) - 3  # (/a/b/myfile.py - 3 = /)
 APPS_DIR = ROOT_DIR.path('bizsprint')
 
 env = environ.Env()
-
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'dmedhaug@gmail.com'
-EMAIL_HOST_PASSWORD = 'rptohcajqrmokglk'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-
-'''
-If using gmail, you will need to unlock captcha
-to enable Django to send for you:
-https://accounts.gooogle.com/displayunlockcaptcha
-'''
 
 
 # APP CONFIGURATION
@@ -98,6 +87,20 @@ FIXTURE_DIRS = (
 # EMAIL CONFIGURATION
 # ------------------------------------------------------------------------------
 EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND', default='django.core.mail.backends.smtp.EmailBackend')
+
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'dmedhaug@gmail.com'
+EMAIL_HOST_PASSWORD = 'rptohcajqrmokglk'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+'''
+If using gmail, you will need to unlock captcha
+to enable Django to send for you:
+https://accounts.gooogle.com/displayunlockcaptcha
+'''
+
 
 # MANAGER CONFIGURATION
 # ------------------------------------------------------------------------------

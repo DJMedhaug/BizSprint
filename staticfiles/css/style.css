@@ -222,6 +222,8 @@ small { font-family: 'Lato', sans-serif; }
 /* ----------------------------------------------------------------
 	Helper Classes
 -----------------------------------------------------------------*/
+.text_align_center {margin-top: 55px; text-align: center !important;}
+
 .uppercase { text-transform: uppercase !important; }
 
 .lowercase { text-transform: lowercase !important; }
@@ -11479,7 +11481,7 @@ body:not(.device-touch) .tagcloud a {
     display: block;
     position: absolute;
     left: -44px;
-    text-align: center;
+    -align: center;text
     top: 2px;
     width: 32px;
     height: 32px;
