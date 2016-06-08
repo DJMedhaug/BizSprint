@@ -140,6 +140,7 @@ dl, dt, dd, ol, ul, li {
 
 
 body {
+	background-color: #FFF;
 	line-height: 1.5;
 	color: #555;
 	font-family: 'Lato', sans-serif;
@@ -941,7 +942,7 @@ html[xmlns] .slider-wrap {display: block;}
 #header {
 	position: relative;
 	background-color: rgba(67,95,109,1);
-	border-bottom: 1px solid #21353f;
+	border-bottom: 5px solid #21353f;
 }
 
 #header .container { position: relative; }

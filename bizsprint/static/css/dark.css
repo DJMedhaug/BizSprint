@@ -11,7 +11,7 @@
 { color: #EEE; }
 
 .dark h5,
-.dark h6 { color: #df6126; }
+.dark h6 { color: #fff; }
 
 .dark a:hover { color: #EEE; }
 
@@ -1028,20 +1028,20 @@ body.top-search-open .dark #header-wrap:not(.not-dark) #top-search a,
 }
 
 .dark #copyrights {
-	background-color: #fff;
-	color: #df6126;
+	background-color: #df6126;
+	color: #fff;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
 }
 
-.dark #copyrights i.footer-icon { color: #df6126; }
+.dark #copyrights i.footer-icon { color: #fff; }
 
 .dark .copyright-links a {
-	color: #df6126;
+	color: #fff;
 	border-bottom-color: rgba(255,255,255,0.25);
 }
 
 .dark .copyright-links a:hover {
-	color: #bf3d01;
+	color: #fff;
 	border-bottom-color: rgba(255,255,255,0.35);
 }
 
