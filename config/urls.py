@@ -23,7 +23,7 @@ urlpatterns = [
 
     # Your stuff: custom urls includes go here
     url(r'^events', TemplateView.as_view(template_name='events.html'), name='events'),
-    url(r'^blog', TemplateView.as_view(template_name='blog-single-small.html'), name='blog'),
+    url(r'^blog', TemplateView.as_view(template_name='bizblog.html'), name='blog'),
     url(r'^faqs', TemplateView.as_view(template_name='faqs.html'), name='faqs'),
     url(r'^contact', views.contact, name='contact'),
     url(r'^confirmation', TemplateView.as_view(template_name='confirmation.html'), name='confirmation'),

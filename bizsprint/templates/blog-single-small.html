@@ -4,6 +4,22 @@
 
 {% block head_title %}Blog | {{ block.super }}{% endblock %}
 
+{% block mini %}
+        <!-- Page Title
+        ============================================= -->
+        <section id="page-title" class="page-title-mini">
+
+            <div class="container clearfix">
+                <h1 class="biz_blue">Biz Blog</h1>
+
+                <ol class="breadcrumb">
+                    <li><a href={% url 'home' %}>Home</a></li>
+                    <li class="active">Blog</li>
+                </ol>
+            </div>
+
+        </section><!-- #page-title end -->
+{% endblock %}
 
 {% block content %}
 
@@ -21,7 +37,7 @@
 
 						<div class="entry clearfix">
 							<div class="entry-image">
-								<a href="images/blog/full/17.jpg" data-lightbox="image"><img class="image_fade" src="images/blog/full/17.jpg" alt="Standard Post with Image"></a>
+								<a href="static/images/blog/full/17.jpg" data-lightbox="image"><img class="image_fade" src="images/blog/full/17.jpg" alt="Standard Post with Image"></a>
 							</div>
 							<div class="entry-title">
 								<h2><a href="blog-single.html">This is a Standard post with a Preview Image</a></h2>
