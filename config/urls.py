@@ -28,6 +28,7 @@ urlpatterns = [
     url(r'^contact', views.contact, name='contact'),
     url(r'^confirmation', TemplateView.as_view(template_name='confirmation.html'), name='confirmation'),
     url(r'^login', TemplateView.as_view(template_name='login-register.html'), name='login'),
+    url(r'^posts', views.posts_home, name='posts'),
 
 
 

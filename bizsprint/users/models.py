@@ -15,7 +15,7 @@ class SignUp(models.Model):
 	timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
 	updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
-	def __unicode__(self): #Python 3.3 is __str__
+	def __str__(self): #Python 3.3 is __str__
 		return self.email
 
 
@@ -34,3 +34,12 @@ class User(AbstractUser):
 
 
 
+class Post(models.Model):
+    title = models.CharField(max_length=120)
+    content = models.TextField()
+    updated = models.DateTimeField(auto_now=True, auto_now_add=False)
+    timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
+
+
+    def __str__(self):
+        return self.title

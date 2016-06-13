@@ -9,7 +9,7 @@ from django.views.generic import DetailView, ListView, RedirectView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from bizsprint.users.models import User
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.conf import settings
 from django.core.mail import send_mail
 from django.shortcuts import render
@@ -17,13 +17,13 @@ from django.shortcuts import render
 from bizsprint.users.forms import ContactForm, SignUpForm
 
 
-response = requests.get(
-    "https://www.eventbriteapi.com/v3/users/me/owned_events/",
-    headers = {
-        "Authorization": "Bearer DYESB7ITMXX2FEYYQAH4",
-    },
-    verify = True,  # Verify SSL certificate
-)
+# response = requests.get(
+#     "https://www.eventbriteapi.com/v3/users/me/owned_events/",
+#     headers = {
+#         "Authorization": "Bearer DYESB7ITMXX2FEYYQAH4",
+#     },
+#     verify = True,  # Verify SSL certificate
+# )
 # print response.json()['events'][0]['name']['text']
 
 # Create your views here.
@@ -90,6 +90,10 @@ def contact(request):
         "title_align_center": title_align_center,
     }
     return render(request, "contact.html", context)
+
+
+def posts_home(request):
+    return HttpResponse("<h1>Hi There!</h1>")
 
 
 class UserDetailView(LoginRequiredMixin, DetailView):
