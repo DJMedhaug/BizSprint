@@ -43,6 +43,8 @@ THIRD_PARTY_APPS = (
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
     'bootstrap3', # Bootstrap
+    'posts',
+
 )
 
 # Apps specific for this project go here.

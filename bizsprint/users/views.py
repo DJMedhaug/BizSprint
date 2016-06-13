@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import print_function
 from __future__ import absolute_import, unicode_literals
+import requests
 
 from django.core.urlresolvers import reverse
 from django.views.generic import DetailView, ListView, RedirectView, UpdateView
@@ -15,6 +16,15 @@ from django.shortcuts import render
 
 from bizsprint.users.forms import ContactForm, SignUpForm
 
+
+response = requests.get(
+    "https://www.eventbriteapi.com/v3/users/me/owned_events/",
+    headers = {
+        "Authorization": "Bearer DYESB7ITMXX2FEYYQAH4",
+    },
+    verify = True,  # Verify SSL certificate
+)
+# print response.json()['events'][0]['name']['text']
 
 # Create your views here.
 def home(request):
