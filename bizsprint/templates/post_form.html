@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "bizblog.html" %}
 {% load crispy_forms_tags %}
 
 {% block head_title %}Blog | {{ block.super }}{% endblock %}
@@ -9,11 +9,11 @@
         <section id="page-title" class="page-title-mini">
 
             <div class="container clearfix">
-                <h1 class="biz_blue">Biz Blog</h1>
+                <h1 class="biz_blue">Create Post</h1>
 
                 <ol class="breadcrumb">
                     <li><a href={% url 'home' %}>Home</a></li>
-                    <li class="active">Blog</li>
+                    <li class="active">Create</li>
                 </ol>
             </div>
 

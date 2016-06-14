@@ -7,12 +7,12 @@ from django.core.urlresolvers import reverse
 from django.views.generic import DetailView, ListView, RedirectView, UpdateView
 
 from django.contrib.auth.mixins import LoginRequiredMixin
-
+from django.contrib import messages
 from bizsprint.users.models import User
 from django.http import HttpResponseRedirect, HttpResponse
 from django.conf import settings
 from django.core.mail import send_mail
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 
 from bizsprint.users.forms import ContactForm, SignUpForm
 from .models import Post
@@ -106,7 +106,10 @@ def posts_create(request):
     if form.is_valid():
         instance = form.save(commit=False)
         instance.save()
+        messages.success(request, "Post Created")
         return HttpResponseRedirect(instance.get_absolute_url())
+    else:
+        messages.error(request, "Post Error")
     context = {
         "form": form,
     }
@@ -126,7 +129,7 @@ def posts_update(request, id=None):
     if form.is_valid():
         instance = form.save(commit=False)
         instance.save()
-        # messages.success(request, "<a href='#'>Item</a> Saved", extra_tags='html_safe')
+        messages.success(request, "Post Updated")
         return HttpResponseRedirect(instance.get_absolute_url())
     context = {
         "instance": instance,
@@ -135,8 +138,11 @@ def posts_update(request, id=None):
     }
     return render(request, "post_form.html", context)
 
-def posts_delete(request):
-    return HttpResponse("<h1>Delete</h1>")
+def posts_delete(request, id=None):
+    instance = get_object_or_404(Post, id=id)
+    instance.delete()
+    messages.success(request, "Post Deleted")
+    return redirect("posts")
 
 
 class UserDetailView(LoginRequiredMixin, DetailView):

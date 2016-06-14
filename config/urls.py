@@ -32,7 +32,7 @@ urlpatterns = [
     url(r'^create', "bizsprint.users.views.posts_create", name='create'),
     url(r'^(?P<id>\d+)/$', "bizsprint.users.views.posts_detail", name='detail'),
     url(r'^(?P<id>\d+)/edit/', "bizsprint.users.views.posts_update", name='update'),
-    url(r'^delete', "bizsprint.users.views.posts_delete", name='delete'),
+    url(r'^(?P<id>\d+)/delete', "bizsprint.users.views.posts_delete", name='delete'),
 
 
 
