@@ -92,8 +92,26 @@ def contact(request):
     return render(request, "contact.html", context)
 
 
-def posts_home(request):
-    return HttpResponse("<h1>Hi There!</h1>")
+def posts_list(request):
+    context = {
+        "title": "List"
+    }
+    return render(request, "bizblog.html", context)
+
+def posts_create(request):
+    return HttpResponse("<h1>Create</h1>")
+
+def posts_detail(request):
+    context = {
+        "title": "Detail"
+    }
+    return render(request, "bizblog.html", context)
+
+def posts_update(request):
+    return HttpResponse("<h1>Update</h1>")
+
+def posts_delete(request):
+    return HttpResponse("<h1>Delete</h1>")
 
 
 class UserDetailView(LoginRequiredMixin, DetailView):
