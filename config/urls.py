@@ -28,11 +28,11 @@ urlpatterns = [
     url(r'^contact', "bizsprint.users.views.contact"),
     url(r'^confirmation', TemplateView.as_view(template_name='confirmation.html'), name='confirmation'),
     url(r'^login', TemplateView.as_view(template_name='login-register.html'), name='login'),
-    url(r'^posts', "bizsprint.users.views.posts_list"),
-    url(r'^create', "bizsprint.users.views.posts_create"),
-    url(r'^detail', "bizsprint.users.views.posts_detail"),
-    url(r'^update', "bizsprint.users.views.posts_update"),
-    url(r'^delete', "bizsprint.users.views.posts_delete"),
+    url(r'^posts/', "bizsprint.users.views.posts_list", name='posts'),
+    url(r'^create', "bizsprint.users.views.posts_create", name='create'),
+    url(r'^(?P<id>\d+)/$', "bizsprint.users.views.posts_detail", name='detail'),
+    url(r'^(?P<id>\d+)/edit/', "bizsprint.users.views.posts_update", name='update'),
+    url(r'^delete', "bizsprint.users.views.posts_delete", name='delete'),
 
 
 

@@ -12,10 +12,11 @@ from bizsprint.users.models import User
 from django.http import HttpResponseRedirect, HttpResponse
 from django.conf import settings
 from django.core.mail import send_mail
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from bizsprint.users.forms import ContactForm, SignUpForm
-
+from .models import Post
+from .forms import PostForm
 
 # response = requests.get(
 #     "https://www.eventbriteapi.com/v3/users/me/owned_events/",
@@ -93,22 +94,46 @@ def contact(request):
 
 
 def posts_list(request):
+    queryset = Post.objects.all()
     context = {
+        "object_list": queryset,
         "title": "List"
     }
     return render(request, "bizblog.html", context)
 
 def posts_create(request):
-    return HttpResponse("<h1>Create</h1>")
-
-def posts_detail(request):
+    form = PostForm(request.POST or None)
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.save()
+        return HttpResponseRedirect(instance.get_absolute_url())
     context = {
-        "title": "Detail"
+        "form": form,
     }
-    return render(request, "bizblog.html", context)
+    return render(request, "post_form.html", context)
 
-def posts_update(request):
-    return HttpResponse("<h1>Update</h1>")
+def posts_detail(request, id):
+    instance = get_object_or_404(Post, id=id)
+    context = {
+        "instance": instance,
+        "title": instance.title,
+    }
+    return render(request, "post_detail.html", context)
+
+def posts_update(request, id=None):
+    instance = get_object_or_404(Post, id=id)
+    form = PostForm(request.POST or None, instance = instance)
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.save()
+        # messages.success(request, "<a href='#'>Item</a> Saved", extra_tags='html_safe')
+        return HttpResponseRedirect(instance.get_absolute_url())
+    context = {
+        "instance": instance,
+        "title": instance.title,
+        "form": form,
+    }
+    return render(request, "post_form.html", context)
 
 def posts_delete(request):
     return HttpResponse("<h1>Delete</h1>")
