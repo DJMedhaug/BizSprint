@@ -26,31 +26,34 @@
 {% block content %}
 <div class="col-lg-8 col-lg-offset-2">
 
-<h1>{{ title }} <h4 class="biz_blue">{{ instance.timestamp }}</h4></h1>
-{#<small class="biz_blue">Share on &nbsp; </small>#}
-<div class="social_linkage" style="font-size: 20px;">
-<a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}" class="fa fa-facebook-square">
+<h1>{{ title }} <small>{% if instance.draft %} <span style="color:red;">Draft</span> {% endif %}</small></h1>
+<h4 class="biz_blue">{{ instance.publish }}</h4>
+{% if instance.user.get_full_name %}<p>Author: {{ instance.user.get_full_name }}</p>{% endif %}
 
-</a>
-
-<a href="https://twitter.com/home?status={{ share_string }}%20{{ request.build_absolute_uri }}" class="fa fa-twitter-square">
-
-</a>
-
-
-<a href="https://www.linkedin.com/shareArticle?mini=true&url={{ request.build_absolute_uri }}&title={{ instance.title }}&summary={{ share_string }}&source={{ request.build_absolute_uri }}" class="fa fa-linkedin-square">
-
-</a>
-
-<a href="http://www.reddit.com/submit?url={{ request.build_absolute_uri }}&title={{ share_string }}."class="fa fa-reddit-square"></a>
-</div>
-
+<div class="entry-image">
     {% if instance.image %}
     <img class='img-responsive' src='{{ instance.image.url }}'/>
     {% endif %}
+</div>
+<div class="divider divider-short divider-center"><i class="fa fa-crop"></i></div>
 
+<div class='row'>
+<div class='col-sm-12'>
+    <div class='content-markdown'>{{ instance.content }}</div>
+    <div class='content-markdown'>{{ instance.content }}</div>
+    <div class='content-markdown'>{{ instance.content }}</div>
+    <div class='content-markdown'>{{ instance.content }}</div>
+    <div class='content-markdown'>{{ instance.content }}</div>
+    <div class='content-markdown'>{{ instance.content }}</div>
 
+<hr/>
+<br/>
+    <p><div class="fb-like" data-href="{{ request.build_absolute_uri }}" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
 
-    {{ instance.content|linebreaks }}<br/>
+</p>
+<div class="fb-comments" data-href="{{ request.build_absolute_uri }}" data-numposts="5"></div>
+
+</div>
+</div>
 </div>
 {% endblock %}
