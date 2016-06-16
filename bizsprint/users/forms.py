@@ -1,7 +1,7 @@
 
 from django import forms
 
-from .models import SignUp, Post
+from .models import SignUp
 from django.core import validators
 
 
@@ -10,13 +10,6 @@ def must_be_empty(value):
         raise forms.ValidationError('is not empty')
 
 
-class PostForm(forms.ModelForm):
-    class Meta:
-        model = Post
-        fields = [
-            "title",
-            "content"
-        ]
 
 class ContactForm(forms.Form):
     name = forms.CharField(required=True)

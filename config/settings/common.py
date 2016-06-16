@@ -43,6 +43,7 @@ THIRD_PARTY_APPS = (
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
     'bootstrap3', # Bootstrap
+    'posts',
 
 )
 
@@ -118,7 +119,7 @@ MANAGERS = ADMINS
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
     # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
-    'default': env.db('DATABASE_URL', default='postgres:///bizsprint' ),
+    'default': env.db('DATABASE_URL', default='postgres:///bizdb' ),
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 

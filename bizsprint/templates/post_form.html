@@ -1,4 +1,4 @@
-{% extends "bizblog.html" %}
+{% extends "base.html" %}
 {% load crispy_forms_tags %}
 
 {% block head_title %}Blog | {{ block.super }}{% endblock %}
@@ -22,7 +22,7 @@
 
 {% block content %}
     <h1>Form</h1>
-    <form method="POST" action="">{% csrf_token %}
+    <form method="POST" action="" enctype='multipart/form-data'>{% csrf_token %}
         {{ form|crispy }}
         <input type="submit" value="Create Post"/>
     </form>

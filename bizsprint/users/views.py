@@ -1,22 +1,16 @@
 # -*- coding: utf-8 -*-
 from __future__ import print_function
 from __future__ import absolute_import, unicode_literals
-import requests
-
 from django.core.urlresolvers import reverse
 from django.views.generic import DetailView, ListView, RedirectView, UpdateView
-
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib import messages
 from bizsprint.users.models import User
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect
 from django.conf import settings
 from django.core.mail import send_mail
-from django.shortcuts import render, get_object_or_404, redirect
-
+from django.shortcuts import render
 from bizsprint.users.forms import ContactForm, SignUpForm
-from .models import Post
-from .forms import PostForm
+
 
 # response = requests.get(
 #     "https://www.eventbriteapi.com/v3/users/me/owned_events/",
@@ -91,58 +85,6 @@ def contact(request):
         "title_align_center": title_align_center,
     }
     return render(request, "contact.html", context)
-
-
-def posts_list(request):
-    queryset = Post.objects.all()
-    context = {
-        "object_list": queryset,
-        "title": "List"
-    }
-    return render(request, "bizblog.html", context)
-
-def posts_create(request):
-    form = PostForm(request.POST or None)
-    if form.is_valid():
-        instance = form.save(commit=False)
-        instance.save()
-        messages.success(request, "Post Created")
-        return HttpResponseRedirect(instance.get_absolute_url())
-    else:
-        messages.error(request, "Post Error")
-    context = {
-        "form": form,
-    }
-    return render(request, "post_form.html", context)
-
-def posts_detail(request, id):
-    instance = get_object_or_404(Post, id=id)
-    context = {
-        "instance": instance,
-        "title": instance.title,
-    }
-    return render(request, "post_detail.html", context)
-
-def posts_update(request, id=None):
-    instance = get_object_or_404(Post, id=id)
-    form = PostForm(request.POST or None, instance = instance)
-    if form.is_valid():
-        instance = form.save(commit=False)
-        instance.save()
-        messages.success(request, "Post Updated")
-        return HttpResponseRedirect(instance.get_absolute_url())
-    context = {
-        "instance": instance,
-        "title": instance.title,
-        "form": form,
-    }
-    return render(request, "post_form.html", context)
-
-def posts_delete(request, id=None):
-    instance = get_object_or_404(Post, id=id)
-    instance.delete()
-    messages.success(request, "Post Deleted")
-    return redirect("posts")
 
 
 class UserDetailView(LoginRequiredMixin, DetailView):

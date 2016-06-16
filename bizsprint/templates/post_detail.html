@@ -1,6 +1,10 @@
-{% extends "bizblog.html" %}
+{% extends "base.html" %}
+{% load urlify %}
 
-{% block head_title %}Blog | {{ block.super }}{% endblock %}
+{% block head_title %}
+{{ instance.title }} | {{ block.super }}
+{% endblock head_title %}
+
 
 {% block mini %}
         <!-- Page Title
@@ -15,18 +19,38 @@
                     <li class="active">Blog</li>
                 </ol>
             </div>
-
         </section><!-- #page-title end -->
+
 {% endblock %}
 
 {% block content %}
+<div class="col-lg-8 col-lg-offset-2">
 
-<h1>{{ title }}</h1>
+<h1>{{ title }} <h4 class="biz_blue">{{ instance.timestamp }}</h4></h1>
+{#<small class="biz_blue">Share on &nbsp; </small>#}
+<div class="social_linkage" style="font-size: 20px;">
+<a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}" class="fa fa-facebook-square">
 
-    {{ instance.title }}<br/>
-    {{ instance.content }}<br/>
-    {{ instance.timestamp }}<br/>
-    {{ instance.updated }}<br/>
-    {{ instance.id }}<br/>
+</a>
 
+<a href="https://twitter.com/home?status={{ share_string }}%20{{ request.build_absolute_uri }}" class="fa fa-twitter-square">
+
+</a>
+
+
+<a href="https://www.linkedin.com/shareArticle?mini=true&url={{ request.build_absolute_uri }}&title={{ instance.title }}&summary={{ share_string }}&source={{ request.build_absolute_uri }}" class="fa fa-linkedin-square">
+
+</a>
+
+<a href="http://www.reddit.com/submit?url={{ request.build_absolute_uri }}&title={{ share_string }}."class="fa fa-reddit-square"></a>
+</div>
+
+    {% if instance.image %}
+    <img class='img-responsive' src='{{ instance.image.url }}'/>
+    {% endif %}
+
+
+
+    {{ instance.content|linebreaks }}<br/>
+</div>
 {% endblock %}
