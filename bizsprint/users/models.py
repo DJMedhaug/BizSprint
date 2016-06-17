@@ -10,14 +10,13 @@ from django.utils.translation import ugettext_lazy as _
 
 # Create your models here.
 class SignUp(models.Model):
-	email = models.EmailField()
-	full_name = models.CharField(max_length=120, blank=True, null=True)
-	timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
-	updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+    email = models.EmailField()
+    full_name = models.CharField(max_length=120, blank=True, null=True)
+    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
-	def __str__(self): #Python 3.3 is __str__
-		return self.email
-
+    def __str__(self):  # Python 3.3 is __str__
+        return self.email
 
 
 @python_2_unicode_compatible
@@ -31,4 +30,3 @@ class User(AbstractUser):
 
     def get_absolute_url(self):
         return reverse('users:detail', kwargs={'username': self.username})
-

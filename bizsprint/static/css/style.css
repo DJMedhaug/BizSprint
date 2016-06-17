@@ -223,6 +223,14 @@ small { font-family: 'Lato', sans-serif; }
 	Helper Classes
 -----------------------------------------------------------------*/
 /*.social_linkage {width:190px;}*/
+.reply_font {font-size: 11px;}
+
+.detail-image img { border-radius: 5px; margin-top: 25px;
+}
+.biz_blue {color: #48A6A8;}
+
+.biz_orange {color: #DF6126;}
+
 .text_align_center {margin-top: 55px; text-align: center !important;}
 
 .uppercase { text-transform: uppercase !important; }
@@ -730,7 +738,7 @@ html[xmlns] .slider-wrap {display: block;}
 /* ----------------------------------------------------------------
 	Top Bar
 -----------------------------------------------------------------*/
-.biz_blue {color: #48A6A8;}
+
 
 #top-bar {
 	position: relative;
