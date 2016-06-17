@@ -1,9 +1,11 @@
 {% extends "base.html" %}
+
 {% load urlify %}
 
 {% block head_title %}
 {{ instance.title }} | {{ block.super }}
 {% endblock head_title %}
+
 
 
 {% block mini %}
@@ -25,33 +27,52 @@
 
 {% block content %}
 <div class="col-lg-8 col-lg-offset-2">
-
-<h1>{{ title }} <small>{% if instance.draft %} <span style="color:red;">Draft</span> {% endif %}</small></h1>
-<h4 class="biz_blue">{{ instance.publish }}</h4>
-{% if instance.user.get_full_name %}<p>Author: {{ instance.user.get_full_name }}</p>{% endif %}
-
-<div class="entry-image">
     {% if instance.image %}
-    <img class='img-responsive' src='{{ instance.image.url }}'/>
+    <img src='{{ instance.image.url }}' class='img-responsive' />
     {% endif %}
-</div>
-<div class="divider divider-short divider-center"><i class="fa fa-crop"></i></div>
+<h1>{{ title }} <small>{% if instance.draft %}<span style='color:red;'>Draft</span> {% endif %}{{ instance.publish }}</small></h1>
+{% if instance.user.get_full_name %}
+<p>Author: {{ instance.user.get_full_name }}</p>
+{% endif %}
 
-<div class='row'>
-<div class='col-sm-12'>
-    <div class='content-markdown'>{{ instance.content }}</div>
-    <div class='content-markdown'>{{ instance.content }}</div>
-    <div class='content-markdown'>{{ instance.content }}</div>
-    <div class='content-markdown'>{{ instance.content }}</div>
-    <div class='content-markdown'>{{ instance.content }}</div>
-    <div class='content-markdown'>{{ instance.content }}</div>
-
+<p><div class="fb-like" data-href="{{ request.build_absolute_uri }}" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
 <hr/>
-<br/>
-    <p><div class="fb-like" data-href="{{ request.build_absolute_uri }}" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
-
 </p>
-<div class="fb-comments" data-href="{{ request.build_absolute_uri }}" data-numposts="5"></div>
+
+<!-- <p>
+<a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}">
+Facebook
+</a>
+
+<a href="https://twitter.com/home?status={{ instance.content|truncatechars:80|urlify }}%20{{ request.build_absolute_uri }}">
+Twitter
+</a>
+
+<a href='https://plus.google.com/share?url={{ request.build_absolute_uri }}'>
+
+
+<a href="https://www.linkedin.com/shareArticle?mini=true&url={{ request.build_absolute_uri }}&title={{ instance.title }}&summary={{ share_string }}&source={{ request.build_absolute_uri }}">
+Linkedin
+</a>
+
+<a href="http://www.reddit.com/submit?url={{ request.build_absolute_uri }}&title={{ share_string }}.">Reddit</a>
+
+</p> -->
+<div class='row'>
+<div class='col-sm-12 '>
+
+   <div class='post-detail-item'>{{ instance.get_markdown }}</div>
+
+
+    <hr/>
+    <br/>
+
+    <div>
+        <p class="lead">Comments:</p>
+        {{ comments }}
+    </div>
+
+
 
 </div>
 </div>

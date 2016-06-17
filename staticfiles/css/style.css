@@ -259,6 +259,11 @@ small { font-family: 'Lato', sans-serif; }
 	-webkit-box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
+.wmd-panel {
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+}
+
 .line,
 .double-line {
 	clear: both;

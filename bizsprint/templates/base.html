@@ -13,6 +13,7 @@
   <title>{% block head_title %}Biz Sprint{% endblock %}</title>
 
 <link rel="shortcut icon" href="/static/images/bizfav.ico" type="image/x-icon" />
+{% block head_extra %} {% endblock %}
 
 
         <!-- All CSS Files in Head -->
@@ -20,7 +21,6 @@
   <style>
       {% block style %}{% endblock %}
       </style>
-
   </head>
   <body class="stretched">
 
@@ -87,13 +87,16 @@ fjs.parentNode.insertBefore(js, fjs);
 $(document).ready(function(){
     $(".content-markdown").each(function(){
             var content = $(this).text()
-            console.log(content)
             var markedContent = marked(content)
-            console.log(markedContent)
             $(this).html(markedContent)
+    })
+    $(".post-detail-item img").each(function(){
+            $(this).addClass("img-responsive");
     })
 })
 </script>
+
+
 
 
   </body>

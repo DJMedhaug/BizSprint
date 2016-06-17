@@ -43,7 +43,9 @@ THIRD_PARTY_APPS = (
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
     'bootstrap3', # Bootstrap
-    'posts',
+    'pagedown',
+    'markdown_deux',
+
 
 )
 
@@ -51,6 +53,8 @@ THIRD_PARTY_APPS = (
 LOCAL_APPS = (
     'bizsprint.users',  # custom users app
     # Your stuff: custom apps go here
+    'comments',
+    'posts',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
