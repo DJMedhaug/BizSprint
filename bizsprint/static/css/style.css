@@ -272,6 +272,8 @@ small { font-family: 'Lato', sans-serif; }
 	margin-right: 0px !important;
 }
 
+.comment-reply {display: none;}
+
 .line,
 .double-line {
 	clear: both;
