@@ -40,17 +40,17 @@
 
 								<div class="col_full">
 									<label for="login-form-username">Username:</label>
-									<input type="text" id="login-form-username" name="login-form-username" value="" class="form-control" />
+									<input type="text" id="login-form-username" name="login-form-username" value="{{ title }} class="form-control" />
 								</div>
 
 								<div class="col_full">
 									<label for="login-form-password">Password:</label>
-									<input type="password" id="login-form-password" name="login-form-password" value="" class="form-control" />
+									<input type="password" id="login-form-password" name="login-form-password" value="{{ title }} class="form-control" />
 								</div>
 
 								<div class="col_full nobottommargin">
 									<button class="button button-3d nomargin" id="login-form-submit" name="login-form-submit" value="login">Login</button>
-									<a href="#" class="fright">Forgot Password?</a>
+									<a href="login-register.html" class="fright">Forgot Password?</a>
 								</div>
 
 							</form>
@@ -58,44 +58,6 @@
 
 					</div>
 
-					<div class="col_two_third col_last nobottommargin">
-
-
-						<h3>Don't have an Account? Register Now.</h3>
-
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, vel odio non dicta provident sint ex autem mollitia dolorem illum repellat ipsum aliquid illo similique sapiente fugiat minus ratione.</p>
-
-						<!-- Contact Form
-					============================================= -->
-					<div class="col_half">
-
-
-
-						<div>
-
-							<div class="contact-form-result"></div>
-
-							<form class="uniForm" action="/contact/" method="post">
-                                    {% csrf_token %}
-                                    {{ form|crispy }}
-
-
-                                <div class="col_full">
-
-                                    <div class="g-recaptcha" data-sitekey="6LdSsSATAAAAAJoJZ5t_kU49ApKkVP0ankO0VRfA
-"></div>
-
-								</div>
-
-
-                                    <input class='btn btn-default' type='submit' value='Submit'/>
-
-
-
-							</form>
-						</div>
-
-					</div><!-- Contact Form End -->
 
 
 

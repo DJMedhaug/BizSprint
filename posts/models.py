@@ -86,8 +86,8 @@ class Post(models.Model):
     @property
     def get_content_type(self):
         instance = self
-        content_type = ContentType.objects.get_for_model(instance.__class__)
-        return content_type
+        qs = Comment.objects.filter_by_instance(instance)
+        return qs
 
 
 def create_slug(instance, new_slug=None):

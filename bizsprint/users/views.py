@@ -22,6 +22,8 @@ from bizsprint.users.forms import ContactForm, SignUpForm
 # print response.json()['events'][0]['name']['text']
 
 # Create your views here.
+
+
 def home(request):
     title = 'Welcome'
     form = SignUpForm(request.POST or None)

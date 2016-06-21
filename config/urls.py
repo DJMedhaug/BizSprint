@@ -29,14 +29,6 @@ urlpatterns = [
     url(r'^confirmation', TemplateView.as_view(template_name='confirmation.html'), name='confirmation'),
     url(r'^login', TemplateView.as_view(template_name='login-register.html'), name='login'),
     url(r'^posts/', include("posts.urls", namespace='posts')),
-    # url(r'^posts/', "bizsprint.users.views.posts_list", name='posts'),
-    # url(r'^create', "bizsprint.users.views.posts_create", name='create'),
-    # url(r'^(?P<id>\d+)/$', "bizsprint.users.views.posts_detail", name='detail'),
-    # url(r'^(?P<id>\d+)/edit/', "bizsprint.users.views.posts_update", name='update'),
-    # url(r'^(?P<id>\d+)/delete', "bizsprint.users.views.posts_delete", name='delete'),
-
-
-
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
