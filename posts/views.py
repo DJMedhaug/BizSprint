@@ -11,6 +11,7 @@ except:
 from django.contrib import messages
 from django.contrib.contenttypes.models import ContentType
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
 from django.db.models import Q
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.shortcuts import render, get_object_or_404, redirect
@@ -51,6 +52,7 @@ def post_detail(request, slug=None):
         "content_type": instance.get_content_type,
         "object_id": instance.id
     }
+
     form = CommentForm(request.POST or None, initial=initial_data)
     if form.is_valid():
         c_type = form.cleaned_data.get("content_type")
@@ -59,13 +61,13 @@ def post_detail(request, slug=None):
         content_data = form.cleaned_data.get("content")
         parent_obj = None
         try:
-            parent_id = request.POST.get("parent_id")
+            parent_id = int(request.POST.get("parent_id"))
         except:
             parent_id = None
 
         if parent_id:
             parent_qs = Comment.objects.filter(id=parent_id)
-            if parent_qs.exists():
+            if parent_qs.exists() and parent_qs.count() == 1:
                 parent_obj = parent_qs.first()
 
         new_comment, created = Comment.objects.get_or_create(
@@ -102,7 +104,7 @@ def post_list(request):
             Q(user__first_name__icontains=query) |
             Q(user__last_name__icontains=query)
         ).distinct()
-    paginator = Paginator(queryset_list, 5)  # Show 25 contacts per page
+    paginator = Paginator(queryset_list, 8)  # Show 25 contacts per page
     page_request_var = "page"
     page = request.GET.get(page_request_var)
     try:
@@ -116,7 +118,7 @@ def post_list(request):
 
     context = {
         "object_list": queryset,
-        "title": "Recent Posts",
+        "title": "List",
         "page_request_var": page_request_var,
         "today": today,
     }

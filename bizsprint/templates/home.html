@@ -3,10 +3,37 @@
 
 {% block head_title %}Welcome to | {{ block.super }}{% endblock %}
 
+
+
 <style>
 {% block style %}
 {% endblock %}
 </style>
+
+{% block mini %}
+        <!-- Page Title
+        ============================================= -->
+        <section id="page-title" class="page-title-mini">
+
+            <div class="container clearfix">
+                <h1 data-animate="fadeInLeft"><small class="biz_blue">Logged in as {{ user }}</small></h1>
+
+                <ol class='breadcrumb'>
+
+        {% block post_detail_link %}
+        {% endblock %}
+
+        {% if not request.user.is_authenticated %}
+        <li><a href='{% url "signin:register" %}'>Register</a></li>
+        <li><a href='{% url "signin:signin" %}'>Login</a></li>
+       {% else %}
+        <li><a href='{% url "signin:signout" %}'>Logout</a></li>
+        {% endif %}
+    </ol>
+            </div>
+
+        </section><!-- #page-title end -->
+{% endblock %}
 
 {% block jumbotron %}
  <!--  :::  HOME SLIDER ::: -->
@@ -23,19 +50,11 @@
 							<span data-animate="fadeInUp" data-delay="300">Thank you for visiting Biz Sprint, upcoming events are lited below.</span>
 						</div>
 
-{#                        <div class="col-lg-6 col-lg-offset-3">#}
-{#                            <form method="POST" action="">#}
-{#                                {% csrf_token %}#}
-{#                                {{ form }}#}
-{#                                <input class="btn btn-primary" type="submit" value="Sign Up"/>#}
-{##}
-{#                            </form>#}
-{#                        </div>#}
                         </div>
 
 						<div class="accordion accordion-lg divcenter nobottommargin clearfix" style="max-width: 550px;"></div>
 
-{#					<a href="#" data-scrollto="#section-features" class="one-page-arrow"><i class="fa fa-angle-down infinite animated fadeInDown"></i></a>#}
+					<a href="#" data-scrollto="#section-features" class="one-page-arrow"><i class="fa fa-angle-down infinite animated fadeInDown"></i></a>
 
                 </div>
 

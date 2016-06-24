@@ -29,6 +29,10 @@ urlpatterns = [
     url(r'^confirmation', TemplateView.as_view(template_name='confirmation.html'), name='confirmation'),
     url(r'^login', TemplateView.as_view(template_name='login-register.html'), name='login'),
     url(r'^posts/', include("posts.urls", namespace='posts')),
+    url(r'^register/', include("signin.urls", namespace='signin')),
+    url(r'^signin/', include("signin.urls", namespace='signin')),
+    url(r'^signout/', include("signin.urls", namespace='signin')),
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

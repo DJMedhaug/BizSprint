@@ -3087,7 +3087,7 @@ body.stretched .container-fullwidth .breadcrumb { right: 60px !important; }
 /* Page Title - Mini
 -----------------------------------------------------------------*/
 
-#page-title.page-title-mini { padding: 20px 0; }
+#page-title.page-title-mini {padding: 10px 0;}
 
 #page-title.page-title-mini h1 {
 	font-weight: 600;
@@ -3103,7 +3103,7 @@ body.stretched .container-fullwidth .breadcrumb { right: 60px !important; }
 
 #page-title.page-title-nobg {
 	background: transparent !important;
-	border-bottom: 1px solid #F5F5F5;
+	border-bottom: 1px solid #48A6A8;
 }
 
 
