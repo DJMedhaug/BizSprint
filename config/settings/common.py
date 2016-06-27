@@ -45,6 +45,7 @@ THIRD_PARTY_APPS = (
     'bootstrap3', # Bootstrap
     'pagedown',
     'markdown_deux',
+    'rest_framework',
 
 
 )

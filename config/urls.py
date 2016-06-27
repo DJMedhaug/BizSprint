@@ -30,6 +30,7 @@ urlpatterns = [
     url(r'^confirmation', TemplateView.as_view(template_name='confirmation.html'), name='confirmation'),
     #url(r'^login', TemplateView.as_view(template_name='login-register.html'), name='login'),
     url(r'^posts/', include("posts.urls", namespace='posts')),
+    url(r'^api/posts/', include("posts.api.urls", namespace='posts-api')),
     url(r'^register/', include("signin.urls", namespace='signin')),
     url(r'^signin/', include("signin.urls", namespace='signin')),
     url(r'^signout/', include("signin.urls", namespace='signin')),
