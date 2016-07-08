@@ -1,3 +1,10 @@
+from django.db.models import Q
+
+
+from rest_framework.filters import (
+        SearchFilter,
+        OrderingFilter,
+    )
 from rest_framework.generics import (
     CreateAPIView,
     DestroyAPIView,
@@ -6,6 +13,8 @@ from rest_framework.generics import (
     RetrieveAPIView,
     RetrieveUpdateAPIView
     )
+
+
 
 from rest_framework.permissions import (
     AllowAny,
@@ -17,6 +26,7 @@ from rest_framework.permissions import (
 
 from posts.models import Post
 
+from .pagination import PostLimitOffsetPagination, PostPageNumberPagination
 from .permissions import IsOwnerOrReadOnly
 
 from .serializers import (
@@ -58,13 +68,38 @@ class PostDeleteAPIView(DestroyAPIView):
     queryset = Post.objects.all()
     serializer_class = PostDetailSerializer
     lookup_field = 'slug'
+    permission_classes = [IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]
     #lookup_url_kwarg = "abc"
 
 
 class PostListAPIView(ListAPIView):
-    queryset = Post.objects.all()
     serializer_class = PostListSerializer
+    filter_backends= [SearchFilter, OrderingFilter]
+    search_fields = ['title', 'content', 'user__first_name']
+    pagination_class = PostPageNumberPagination #PageNumberPagination
 
-    #def get_queryset()
+    def get_queryset(self, *args, **kwargs):
+        #queryset_list = super(PostListAPIView, self).get_queryset(*args, **kwargs)
+        queryset_list = Post.objects.all()
+        query = self.request.GET.get("q")
+        if query:
+            queryset_list = queryset_list.filter(
+                    Q(title__icontains=query)|
+                    Q(content__icontains=query)|
+                    Q(user__first_name__icontains=query) |
+                    Q(user__last_name__icontains=query)
+                    ).distinct()
+        return queryset_list
+
+
+
+
+
+
+
+
+
+
+
 
 
