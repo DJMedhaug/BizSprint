@@ -268,6 +268,7 @@ small { font-family: 'Lato', sans-serif; }
 }
 
 .wmd-panel {
+	max-width:100%;
 	margin-left: 0px !important;
 	margin-right: 0px !important;
 }
