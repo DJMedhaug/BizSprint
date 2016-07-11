@@ -2409,6 +2409,11 @@ body.side-panel-open:not(.device-xxs):not(.device-xs):not(.device-sm) .body-over
 
 
 #slider {
+	background: url("/static/images/fandam.jpg");
+	background-repeat: no-repeat;
+	background-size:cover;
+	width: 100%;
+    height: auto;
 	position: relative;
 	width: 100%;
 	overflow: hidden;
