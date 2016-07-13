@@ -8,7 +8,7 @@ from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
 from bizsprint.users import views
-
+from rest_framework_jwt.views import obtain_jwt_token
 
 urlpatterns = [
     url(r'^$', views.home, name='home'),
@@ -30,6 +30,7 @@ urlpatterns = [
     url(r'^confirmation', TemplateView.as_view(template_name='confirmation.html'), name='confirmation'),
     #url(r'^login', TemplateView.as_view(template_name='login-register.html'), name='login'),
     url(r'^posts/', include("posts.urls", namespace='posts')),
+    url(r'^api/auth/token/', obtain_jwt_token),
     url(r'^api/users/', include("signin.api.urls", namespace='users-api')),
     url(r'^api/comments/', include("comments.api.urls", namespace='comments-api')),
     url(r'^api/posts/', include("posts.api.urls", namespace='posts-api')),

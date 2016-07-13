@@ -2409,6 +2409,11 @@ body.side-panel-open:not(.device-xxs):not(.device-xs):not(.device-sm) .body-over
 
 
 #slider {
+	background: url("/static/images/fandam.jpg");
+	background-repeat: no-repeat;
+	background-size:cover;
+	width: 100%;
+    height: auto;
 	position: relative;
 	width: 100%;
 	overflow: hidden;
@@ -4529,7 +4534,7 @@ body.device-touch.device-xxs .portfolio-notitle .portfolio-overlay { display: no
 
 #posts .entry-content { margin-top: 30px; }
 
-.single-post .entry-content .entry-image { max-width: 350px; }
+.single-post .entry-content .entry-image { max-width: 550px; }
 
 .entry-content { position: relative; }
 

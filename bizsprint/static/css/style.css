@@ -223,6 +223,14 @@ small { font-family: 'Lato', sans-serif; }
 	Helper Classes
 -----------------------------------------------------------------*/
 /*.social_linkage {width:190px;}*/
+
+.eventList {
+	padding: 20px;
+	background-color: #F9F9F9;
+	border-bottom: 3px solid #EEE;
+
+}
+
 .reply_font {font-size: 11px;}
 
 .detail-image img { border-radius: 5px; margin-top: 25px;
@@ -4534,7 +4542,7 @@ body.device-touch.device-xxs .portfolio-notitle .portfolio-overlay { display: no
 
 #posts .entry-content { margin-top: 30px; }
 
-.single-post .entry-content .entry-image { max-width: 350px; }
+.single-post .entry-content .entry-image { max-width: 550px; }
 
 .entry-content { position: relative; }
 
