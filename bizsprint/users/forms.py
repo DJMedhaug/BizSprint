@@ -9,28 +9,24 @@ def must_be_empty(value):
     if value:
         raise forms.ValidationError('is not empty')
 
-
-
 class ContactForm(forms.Form):
-    name = forms.CharField(required=True)
-    email = forms.EmailField(required=True)
-    phone = forms.IntegerField(required=False)
-    message = forms.CharField(required=True, widget=forms.Textarea)
+    full_name = forms.CharField(required=True)
+    email = forms.EmailField()
+    verify_email = forms.EmailField(label="Please varify your email address")
+    message = forms.CharField(widget=forms.Textarea)
     honeypot = forms.CharField(required=False,
-                               widget=forms.HiddenInput,
-                               label="Leave empty",
-                               validators=[must_be_empty]
-                               )
-
+                                widget=forms.HiddenInput,
+                                label="Leave empty",
+                                validators=[must_be_empty]
+                                )
 
     def clean(self):
         cleaned_data = super().clean()
         email = cleaned_data.get('email')
         verify = cleaned_data.get('verify_email')
 
-        # if email != verify:
-        #     raise forms.ValidationError("Please enter the same email")
-
+        if email != verify:
+            raise forms.ValidationError("Please enter the same email")
 
 
 class SignUpForm(forms.ModelForm):

@@ -11,28 +11,28 @@
 </style>
 
 {% block mini %}
-        <!-- Page Title
-        ============================================= -->
-        <section id="page-title" class="page-title-mini">
+		<!-- Page Title
+		============================================= -->
+		<section id="page-title" class="page-title-mini">
 
-            <div class="container clearfix">
-                <h1 style="font-size: 12px; data-animate="fadeInLeft">Logged in as {{ user }}</h1>
+			<div class="container clearfix">
+				<h1>Logged in as {{ user }}</h1>
 
-                <ol class='breadcrumb'>
+				<ol class='breadcrumb'>
 
-        {% block post_detail_link %}
-        {% endblock %}
+		{% block post_detail_link %}
+		{% endblock %}
 
-        {% if not request.user.is_authenticated %}
-        <li><a href='{% url "signin:register" %}'>Register</a></li>
-        <li><a href='{% url "signin:signin" %}'>Login</a></li>
-       {% else %}
-        <li><a href='{% url "signin:signout" %}'>Logout</a></li>
-        {% endif %}
-    </ol>
-            </div>
+                    {% if not request.user.is_authenticated %}
+                    <li><a href='{% url "signin:register" %}'>Register</a></li>
+                    <li><a href='{% url "signin:signin" %}'>Login</a></li>
+                   {% else %}
+                    <li><a href='{% url "signin:signout" %}'>Logout</a></li>
+                    {% endif %}
+	            </ol>
+			</div>
 
-        </section><!-- #page-title end -->
+		</section><!-- #page-title end -->
 {% endblock %}
 
 {% block jumbotron %}
@@ -47,126 +47,62 @@
 
 						<div class="heading-block center nobottomborder">
 							<h1 data-animate="fadeInUp"><strong>{{ title }} To BizSprint</strong></h1>
-							<span data-animate="fadeInUp" data-delay="300">Thank you for visiting Biz Sprint, upcoming events are lited below.</span>
+							<span data-animate="fadeInUp" data-delay="300">View upcoming events below.</span>
 						</div>
 
-                        </div>
+						</div>
 
-						<div class="accordion accordion-lg divcenter nobottommargin clearfix" style="max-width: 550px;"></div>
+						<div class="accordion accordion-lg divcenter nobottommargin clearfix"></div>
 
 					<a href="#" data-scrollto="#section-features" class="one-page-arrow"><i class="fa fa-angle-down infinite animated fadeInDown"></i></a>
 
-                </div>
+				</div>
 
-			    </div>
-            </div>
+				</div>
+			</div>
 		</section>
 
 {% endblock %}
 
 
 {% block upcoming %}
-     <div class="entry clearfix"  data-animate="bounceInLeft">
-    <h2>Upcoming Events!</h2>
-<div id="events"></div>
-    </div>
-                <div class="container clearfix">
-
-                    <br>
-                    <h3>Upcoming Sprints</h3>
-                    </br>
-
-                    <div id="posts" class="events small-thumbs">
+	<div class="pricing-title  text_align_center ">
+	<h1>Upcoming Sprints!</h1>
+	</div>
+	 <div class="entry clearfix"  data-animate="lightSpeedIn">
 
 
-                        <div id="posts" class="events small-thumbs">
-{#                          <h1 class="text_align_center">Events will be listed soon!</h1>#}
+		 <div class="text_align_center">
+<div id="events">
+
+</div>
+		 </div>
+
+		 </div>
 
 
-                           <div class="entry clearfix"  data-animate="bounceInLeft">
-                            <div class="entry-image">
-                                    <img src="/static/images/Events/MNPsm.jpg" alt="Women in Tech">
-                            </div>
-                            <div class="entry-c">
-                                <div class="entry-title">
-                                    <h2>Monday Night Python</h2>
-                                </div>
-                                <ul class="entry-meta clearfix">
-                                    <li><a href="events-calendar.html"><i class="fa fa-calendar" aria-hidden="true"></i>TUE, APR 19 AT 4:30 PM</a></li>
-                                    <li><a href="maps.html"><i class="fa fa-map-marker" aria-hidden="true"></i> PORTLAND, OR</a></li>
-                                </ul>
-                                <div class="entry-content">
-                                    <p>Fábellas disséntiàs philòsophia at èám. Cum autem iusto denique id, salé nónumes suscipiántur id ìus, át quó natum omnes sìgniferumqué! Duó ne ìúvàret dìscere, prí ea iùstò phaedrúm. Qui ceteros maiestàtis adversaríum ad, qui quando vòluptarìa ullámcorper te, né hís nihil aeternò àlíquam.
-
- Énim omnís vel ét. Ius id clíta dícànt. Póstea timeàm concéptàm sit èt, id lórem màzim utroque prí! Meìs consulatù mel ea, òratío làtine deseruisse qùi nó.
-
- Eu détràcto èfficìendi meà, vim id núllam advèrsaríum. Solum salùtandì nam ìd, méi ne dìcò tàntàs dèlenit. Nam vocent percìpit id, át sea velìt nihil scrípta, est lobortis sùavìtate torquátos cú. Primá zríl scriptà mel út, vero erròr mel et! Molestié scribentur sígniferumque eì mea, èx maluisset scripserit quo.
-                                    </p>
-                                    <a href="https://www.eventbrite.com/e/monday-night-python-tickets-26548231475" target="_blank" class="btn btn-default">Register</a>
-                                </div>
-                            </div>
-                        </div>
-
-                         <div class="entry clearfix"  data-animate="bounceInLeft">
-                            <div class="entry-image">
-                                    <img src="/static/images/Events/FEThurs.jpg" alt="Tech Talk">
-                            </div>
-                            <div class="entry-c">
-                                <div class="entry-title">
-                                    <h2>Frontend Thursday</h2>
-                                </div>
-                                <ul class="entry-meta clearfix">
-                                    <li><a href="events-calendar.html"><i class="fa fa-calendar" aria-hidden="true"></i> Friday, May 6, 2016 from 8:00 AM to 2:00 PM</a></li>
-                                    <li><a href="maps.html"><i class="fa fa-map-marker" aria-hidden="true"></i>  Oregon Tech - 27500 SW Parkway Ave, Wilsonville, OR 97070 </a></li>
-                                </ul>
-                                <div class="entry-content">
-                                    <p>TECH Talks is a one-day seminar produced entirely by students from Oregon Institute of Technology, featuring speakers who are shaping the future in the fields of Technology, Engineering, Creativity and Health. It brings exciting current innovations in the TECH fields to students; and presents cutting edge technologies, which help to connect them (the next generation of industry leaders) with prospective employers. The event also introduces to industry leaders, the opportunities Oregon Tech students have to develop their non-technical skills – such as writing, teamwork, and problem solving – which prepare them to be more well-rounded professionals.</p>
-                                    <a href="https://www.eventbrite.com/e/2016-tech-talks-registration-22515638882?utm-medium=discovery&utm-campaign=social&utm-content=attendeeshare&utm-source=cp&utm-term=listing" class="btn btn-default">Register</a>
-                                </div>
-                            </div>
-                        </div>
-
-
-                       <div class="center" data-animate="fadeInDown">
-
-                         <a href="events.html" data-scrollto="#section-pricing" class="button button-3d button-gray  nobottommargin">VIEW MORE UPCOMING EVENTS</a>
-
-                        </div>
-
-<div class="divider divider-short divider-center"><i class="fa fa-crop"></i></div>
-
-
-
-
-                    <div class="clear"></div>
-<div class="fancy-title title-border title-center">
-						<h3>Sponsors</h3>
-					</div>
-
-					<div id="oc-clients-full" class="owl-carousel owl-carousel-full image-carousel bottommargin-sm carousel-widget" data-margin="30" data-loop="true" data-nav="false" data-autoplay="5000" data-pagi="false"data-items-xxs="2" data-items-xs="3" data-items-sm="4" data-items-md="5" data-items-lg="6">
-
-						<div class="oc-item"><a href="https://teamtreehouse.com/home" target="_blank"><img src="/static/images/BottomSlider/treehouse.png" alt=""></a></div>
-						<div class="oc-item"><a href="https://www.urbanairship.com/" target="_blank"><img src="/static/images/BottomSlider/urban-airship-logo.png" alt=""></a></div>
-						<div class="oc-item"><a href="http://www.learning.com/" target="_blank"><img src="/static/images/BottomSlider/learningLogo.png" alt=""></a></div>
-						<div class="oc-item"><a href="http://www.elementaltechnologies.com/" target="_blank"><img src="/static/images/BottomSlider/imgres.png" alt=""></a></div>
-						<div class="oc-item"><a href="http://www.nike.com/us/en_us/" target="_blank"><img src="/static/images/BottomSlider/NIKE.png" alt=""></a></div>
-						<div class="oc-item"><a href="http://www.ibm.com/us-en/" target="_blank"><img src="/static/images/BottomSlider/IBM.png" alt=""></a></div>
-						<div class="oc-item"><a href="https://healthplans.providence.org/individuals-families/" target="_blank"><img src="/static/images/BottomSlider/phs_logo550px.png" alt="Clients"></a></div>
-						<div class="oc-item"><a href="http://bluejeans.com/" target="_blank"><img src="/static/images/BottomSlider/bluejeans.png" alt=""></a></div>
-						<div class="oc-item"><a href="http://newrelic.com/" target="_blank"><img src="/static/images/BottomSlider/NewRelic-logo-square.png" alt="Clients"></a></div>
-
-					</div>
-
-
-				</div>
-
-
-                </div>
-
-
-
-            </div>
-
-        </section>
+{#<div class="divider divider-short divider-center"><i class="fa fa-crop"></i></div>#}
+{##}
+{##}
+{##}
+{##}
+{#					<div class="clear"></div>#}
+{#<div class="fancy-title title-border title-center">#}
+{#						<h3>Sponsors</h3>#}
+{#					</div>#}
+{##}
+{#					<div id="oc-clients-full" class="owl-carousel owl-carousel-full image-carousel bottommargin-sm carousel-widget" data-margin="30" data-loop="true" data-nav="false" data-autoplay="5000" data-pagi="false"data-items-xxs="2" data-items-xs="3" data-items-sm="4" data-items-md="5" data-items-lg="6">#}
+{##}
+{#						<div class="oc-item"><a href="https://teamtreehouse.com/home" target="_blank"><img src="/static/images/BottomSlider/treehouse.png" alt=""></a></div>#}
+{#						<div class="oc-item"><a href="https://www.urbanairship.com/" target="_blank"><img src="/static/images/BottomSlider/urban-airship-logo.png" alt=""></a></div>#}
+{#						<div class="oc-item"><a href="http://www.learning.com/" target="_blank"><img src="/static/images/BottomSlider/learningLogo.png" alt=""></a></div>#}
+{#						<div class="oc-item"><a href="http://www.elementaltechnologies.com/" target="_blank"><img src="/static/images/BottomSlider/imgres.png" alt=""></a></div>#}
+{#						<div class="oc-item"><a href="http://www.nike.com/us/en_us/" target="_blank"><img src="/static/images/BottomSlider/NIKE.png" alt=""></a></div>#}
+{#						<div class="oc-item"><a href="http://www.ibm.com/us-en/" target="_blank"><img src="/static/images/BottomSlider/IBM.png" alt=""></a></div>#}
+{#						<div class="oc-item"><a href="https://healthplans.providence.org/individuals-families/" target="_blank"><img src="/static/images/BottomSlider/phs_logo550px.png" alt="Clients"></a></div>#}
+{#						<div class="oc-item"><a href="http://bluejeans.com/" target="_blank"><img src="/static/images/BottomSlider/bluejeans.png" alt=""></a></div>#}
+{#						<div class="oc-item"><a href="http://newrelic.com/" target="_blank"><img src="/static/images/BottomSlider/NewRelic-logo-square.png" alt="Clients"></a></div>#}
+{##}
+{#					</div>#}
 
 {% endblock %}
