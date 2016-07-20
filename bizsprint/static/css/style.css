@@ -269,7 +269,14 @@ small { font-family: 'Lato', sans-serif; }
 }
 /*End Event Button*/
 
-
+.list_events {
+    background: #f7f7f7;
+    padding: 40px;
+    margin-bottom:25px;
+    margin-top:25px;
+    border: 3px solid #f7f7f7;
+    border-radius: 8px 8px 8px 8px;
+}
 .eventList {
 	padding: 20px;
 	position: relative;
@@ -9357,9 +9364,9 @@ body:not(.device-touch) .team-overlay {
 	padding: 15px 0;
     color: #fff;
 	background-color: #DF6126;
-	border-radius: 3px 3px 0 0;
+	border-radius: 3px 3px 3px 3px;
     margin-top: 20px;
-	border-bottom: 3px solid #48A6A8;
+	border-bottom: 0px solid #48A6A8;
 }
 
 .pricing-title h1 {

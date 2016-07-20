@@ -947,14 +947,14 @@ body.top-search-open .dark #header-wrap:not(.not-dark) #top-search a,
 .dark .title-block > span { color: #999; }
 
 .dark .heading-block:not(.not-dark),
-.dark .counter { text-shadow: 1px 1px 1px rgba(0,0,0,0.1); }
+.dark .counter { text-shadow: 1px 1px 1px rgba(0,0,0,0.6); }
 
 .dark .heading-block:not(.not-dark) h1,
 .dark .heading-block:not(.not-dark) h2,
 .dark .heading-block:not(.not-dark) h3,
 .dark .heading-block:not(.not-dark) h4,
 .dark .emphasis-title:not(.not-dark) h1,
-.dark .emphasis-title:not(.not-dark) h2 { color: #FFF; }
+.dark .emphasis-title:not(.not-dark) h2 {color: #fff;}
 
 .dark .heading-block.not-dark h1,
 .dark .heading-block.not-dark h2,
