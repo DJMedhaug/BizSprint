@@ -1,7 +1,7 @@
 BizSprint
 ==============================
 
-Browse and sign up for events
+BizSprint is a community of volunteers and mentors dedicated to providing quality educational events for budding entrepreneurs.
 
 .. image:: https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg
      :target: https://github.com/pydanny/cookiecutter-django/
