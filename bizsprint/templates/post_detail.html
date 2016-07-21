@@ -21,7 +21,7 @@
                 <h1 class="biz_blue">BizBlog Posts</h1>
 
                 <ol class="breadcrumb">
-                    <li><a href='{% url "posts:list" %}'>Posts</a></li>
+                    <li><a href='{% url "posts:list" %}'>Back to Blog</a></li>
                     <li class="active">Blog</li>
                 </ol>
             </div>
@@ -30,7 +30,9 @@
 {% endblock %}
 
 {% block content %}
-<div class='col-lg-8 col-sm-offset-2'>
+
+<div class='col-lg-12 '>
+<div class="wrapper blog_events">
     {% if instance.image %}
     <img src='{{ instance.image.url }}' class='img-responsive' />
     {% endif %}
@@ -126,6 +128,6 @@ Linkedin
 </div>
 </div>
 </div>
-
+</div>
 
 {% endblock content %}

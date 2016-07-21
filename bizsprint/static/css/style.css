@@ -268,6 +268,15 @@ small { font-family: 'Lato', sans-serif; }
 	border-radius: 3px;
 }
 /*End Event Button*/
+.blog_events {
+    background: #f7f7f7;
+    max-width:100%;
+    padding: 20px;
+    margin-bottom:25px;
+    margin-top:25px;
+    border: 3px solid #f7f7f7;
+    border-radius: 8px 8px 8px 8px;
+}
 
 .list_events {
     background: #f7f7f7;
