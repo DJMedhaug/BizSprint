@@ -6,8 +6,8 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <meta name="description" content="">
     <meta name="author" content="">
 
   <title>{% block head_title %}Biz Sprint{% endblock %}</title>
@@ -45,18 +45,7 @@
 
     {% block form_sign %}{% endblock %}
 
-
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-var js, fjs = d.getElementsByTagName(s)[0];
-if (d.getElementById(id)) return;
-js = d.createElement(s); js.id = id;
-js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
-fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-
- <div class="container">
+        <div class="container">
 {% include "messages_display.html" %}
  
 
@@ -88,6 +77,38 @@ fjs.parentNode.insertBefore(js, fjs);
 
    {% include "javascript.html" %}
     </div>
+
+    <!--Facebook on blog-->
+
+    <script type="text/javascript">
+
+        var deleteLinks = document.querySelectorAll('.delete');
+
+for (var i = 0; i < deleteLinks.length; i++) {
+  deleteLinks[i].addEventListener('click', function(event) {
+	  event.preventDefault();
+
+	  var choice = confirm(this.getAttribute('data-confirm'));
+
+	  if (choice) {
+	    window.location.href = this.getAttribute('href');
+	  }
+  });
+}
+
+    </script>
+
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+
+    <!--End Facebook on blog-->
 
   <script type="text/javascript">
 $(document).ready(function(){
