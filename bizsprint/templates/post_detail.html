@@ -45,7 +45,7 @@
 {% if instance.user.get_full_name %}
 <p>Author: {{ instance.user.get_full_name }}</p>
 {% endif %}
-
+{#{% url 'posts:delete' slug=obl.slug %}#}
 {% if request.user.is_authenticated %}
     <a href="edit" class="btn btn-success">Edit</a>
     <a href="delete" class="delete btn btn-danger" data-confirm="Are you sure to delete this item?">Delete</a>

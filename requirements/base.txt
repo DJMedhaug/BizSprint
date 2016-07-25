@@ -29,6 +29,7 @@ Pillow==3.2.0
 django-allauth==0.24.1
 
 
+
 # Python-PostgreSQL Database Adapter
 psycopg2==2.6.1
 
@@ -46,3 +47,9 @@ redis>=2.10.0
 
 
 # Your custom requirements go here
+django-markdown-deux==1.0.5
+django-pagedown==0.1.1
+bootstrap-admin==0.3.6
+djangorestframework==3.3.3
+djangorestframework-jwt==1.8.0
+requests==2.9.1

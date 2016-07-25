@@ -125,7 +125,7 @@ def post_list(request):
     return render(request, "post_list.html", context)
 
 
-def post_update(request, slug=None):
+def post_update(request, slug):
     if not request.user.is_staff or not request.user.is_superuser:
         raise Http404
     instance = get_object_or_404(Post, slug=slug)
@@ -144,7 +144,7 @@ def post_update(request, slug=None):
     return render(request, "post_form.html", context)
 
 
-def post_delete(request, slug=None):
+def post_delete(request, slug):
     if not request.user.is_staff or not request.user.is_superuser:
         raise Http404
     instance = get_object_or_404(Post, slug=slug)
