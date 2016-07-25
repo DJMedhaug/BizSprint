@@ -26,7 +26,7 @@ urlpatterns = [
     url(r'^events', TemplateView.as_view(template_name='events.html'), name='events'),
     url(r'^blog', TemplateView.as_view(template_name='bizblog.html'), name='blog'),
     url(r'^faqs', TemplateView.as_view(template_name='faqs.html'), name='faqs'),
-    url(r'^contact', "bizsprint.users.views.contact", name='contact'),
+    url(r'^contact', views.contact, name='contact'),
     url(r'^confirmation', TemplateView.as_view(template_name='confirmation.html'), name='confirmation'),
     #url(r'^login', TemplateView.as_view(template_name='login-register.html'), name='login'),
     url(r'^posts/', include("posts.urls", namespace='posts')),
