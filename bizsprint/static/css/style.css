@@ -222,7 +222,9 @@ small { font-family: 'Lato', sans-serif; }
 /* ----------------------------------------------------------------
 	Helper Classes
 -----------------------------------------------------------------*/
-
+.eventBreak {
+     margin-bottom: 30px !important;
+}
 /*Event Box*/
 .micro-ticket-box .micro-ticket-box__btn {
     float: right;
@@ -273,21 +275,22 @@ small { font-family: 'Lato', sans-serif; }
     max-width:100%;
     padding: 20px;
     margin-bottom:25px;
-    margin-top:25px;
+    margin-top:5px;
     border: 3px solid #f7f7f7;
     border-radius: 8px 8px 8px 8px;
 }
 
 .list_events {
     background: #f7f7f7;
-    padding: 40px;
-    margin-bottom:25px;
-    margin-top:25px;
+    padding: 0px 40px 0px 40px;
+    margin-bottom:15px;
+    margin-top:15px;
     border: 3px solid #f7f7f7;
     border-radius: 8px 8px 8px 8px;
 }
+
 .eventList {
-	padding: 20px;
+	padding: 10px;
 	position: relative;
 	border: 2px solid #aaa;
 
