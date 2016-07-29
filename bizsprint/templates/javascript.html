@@ -30,13 +30,14 @@
 
         //anon oauth token
         var token = 'FLL6OQP3IFYWLF7EDQ3P';
+        var order_by = 'created_desc';
         //org id
         var organizer = '11080581899';
         var $events = $("#events");
 
 
         $events.html("<i>Loading events, please stand by...</i>");
-        $.get('https://www.eventbriteapi.com/v3/users/me/events/?token=FLL6OQP3IFYWLF7EDQ3P&expand=venue', function(res) {
+        $.get('https://www.eventbriteapi.com/v3/users/me/owned_events/?token=FLL6OQP3IFYWLF7EDQ3P&order_by=created_desc&expand=venue', function(res) {
             if(res.events.length) {
                 var b = "";
                 for(var i=0;i<res.events.length;i++) {
@@ -57,11 +58,7 @@
             }
 
         });
-
-
-
     });
 
-
-    </script>
+ </script>
 
