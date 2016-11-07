@@ -47,7 +47,7 @@
 
         <div class="container">
 {% include "messages_display.html" %}
- 
+
 
 
 
@@ -75,29 +75,10 @@
 
     <div id="gotoTop" class="fa fa-chevron-up" aria-hidden="true"></div>
 
-   {% include "javascript.html" %}
+
     </div>
 
     <!--Facebook on blog-->
-
-    <script type="text/javascript">
-
-        var deleteLinks = document.querySelectorAll('.delete');
-
-for (var i = 0; i < deleteLinks.length; i++) {
-  deleteLinks[i].addEventListener('click', function(event) {
-	  event.preventDefault();
-
-	  var choice = confirm(this.getAttribute('data-confirm'));
-
-	  if (choice) {
-	    window.location.href = this.getAttribute('href');
-	  }
-  });
-}
-
-    </script>
-
     <div id="fb-root"></div>
 <script>(function(d, s, id) {
 var js, fjs = d.getElementsByTagName(s)[0];
@@ -153,8 +134,8 @@ $(document).ready(function(){
 })
 </script>
 
-
+{% include "javascript.html" %}
 
   </body>
 </html>
- 
+
